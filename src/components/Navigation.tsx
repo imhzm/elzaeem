@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Button from "@/components/Button";
+import Image from "next/image";
 
 const navLinks = [
   { label: "الرئيسية", href: "/#home" },
@@ -14,7 +15,11 @@ const navLinks = [
   { label: "تواصل معنا", href: "/#contact-form" },
 ];
 
-export default function Navigation() {
+interface NavigationProps {
+  logo?: string;
+}
+
+export default function Navigation({ logo = "/images/logo.png" }: NavigationProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -59,13 +64,28 @@ export default function Navigation() {
           {/* Logo */}
           <motion.a
             href="/#home"
-            className="flex items-center gap-2 group"
+            className="flex items-center gap-3 group"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className="text-2xl font-bold text-gold text-glow-strong tracking-wider">
-              ELZAEEM
-            </span>
+            <div className="relative w-12 h-12 rounded-xl bg-gradient-to-br from-gold/20 to-gold/5 border border-gold/30 flex items-center justify-center overflow-hidden">
+              <Image
+                src={logo}
+                alt="مركز الزعيم الدولي"
+                width={48}
+                height={48}
+                className="object-contain"
+                priority
+              />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-lg font-bold text-gold text-glow-strong leading-tight">
+                ELZAEEM
+              </span>
+              <span className="text-xs text-gray-400">
+                INTERNATIONAL
+              </span>
+            </div>
           </motion.a>
 
           {/* Desktop Navigation */}

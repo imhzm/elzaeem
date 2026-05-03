@@ -3,6 +3,7 @@
 import { FaWhatsapp, FaFacebook, FaInstagram, FaTiktok } from "react-icons/fa";
 import { getWhatsAppLink } from "@/lib/utils";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -22,9 +23,23 @@ export default function Footer() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h3 className="text-3xl font-bold text-gold mb-4 tracking-wide text-glow-strong">
-            ELZAEEM
-          </h3>
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-gold/20 to-gold/5 border border-gold/30 flex items-center justify-center">
+              <Image
+                src="/images/logo.png"
+                alt="مركز الزعيم الدولي"
+                width={64}
+                height={64}
+                className="object-contain"
+              />
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-gold tracking-wide text-glow-strong">
+                ELZAEEM
+              </h3>
+              <p className="text-xs text-gray-400">INTERNATIONAL</p>
+            </div>
+          </div>
           <p className="text-gray-300 mb-6 leading-relaxed">
             مركز الزعيم الدولي لكماليات السيارات والطباعة والدعاية والإعلان
           </p>

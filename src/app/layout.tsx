@@ -13,7 +13,9 @@ const cairo = Cairo({
 });
 
 const baseUrl = "https://elzaeem-international.skywaveads.com";
-const ogImage = "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1200&q=80";
+const ogImage = `${baseUrl}/images/logo.png`;
+const favicon = `${baseUrl}/images/logo.png`;
+const appleIcon = `${baseUrl}/images/logo.png`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -44,6 +46,19 @@ export const metadata: Metadata = {
   alternates: {
     canonical: baseUrl,
   },
+  icons: {
+    icon: [
+      { url: favicon, sizes: "32x32", type: "image/png" },
+      { url: favicon, sizes: "16x16", type: "image/png" },
+      { url: favicon, sizes: "192x192", type: "image/png" },
+      { url: favicon, sizes: "512x512", type: "image/png" },
+    ],
+    apple: [
+      { url: appleIcon, sizes: "180x180", type: "image/png" },
+    ],
+  },
+  manifest: "/manifest.webmanifest",
+  themeColor: "#D4AF37",
   openGraph: {
     type: "website",
     locale: "ar_EG",
@@ -59,7 +74,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         alt: "ELZAEEM INTERNATIONAL - كماليات سيارات وطباعة",
-        type: "image/jpeg",
+        type: "image/png",
       },
     ],
   },
@@ -130,7 +145,7 @@ export const structuredData = {
   currenciesAccepted: "EGP",
   paymentAccepted: ["Cash", "Credit Card", "Bank Transfer"],
   image: ogImage,
-  logo: `${baseUrl}/logo.png`,
+  logo: `${baseUrl}/images/logo.png`,
   sameAs: [
     "https://www.facebook.com/elzaeeminternational",
     "https://www.instagram.com/elzaeeminternational",
@@ -156,15 +171,6 @@ export default function RootLayout({
       className={`${cairo.variable} h-full antialiased`}
     >
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link
-          rel="apple-touch-icon"
-          href="/apple-icon.png"
-          sizes="180x180"
-        />
-        <link rel="manifest" href="/manifest.webmanifest" />
-        <meta name="theme-color" content="#D4AF37" />
-        <meta name="msapplication-TileColor" content="#D4AF37" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
@@ -173,7 +179,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-transparent text-foreground overflow-x-hidden">
         <BackgroundAnimations />
         <ScrollProgress />
-        <Navigation />
+        <Navigation logo="/images/logo.png" />
         <main className="relative z-10 flex-1">{children}</main>
       </body>
     </html>
