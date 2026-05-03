@@ -1,0 +1,19 @@
+# Robots.txt for ELZAEEM INTERNATIONAL
+# https://www.robotstxt.org/robotstxt.html
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+
+# Googlebot
+User-agent: Googlebot
+Allow: /
+
+# Host
+Host: https://elzaeem-international.skywaveads.com
+
+# Sitemaps
+Sitemap: https://elzaeem-international.skywaveads.com/sitemap.xml
