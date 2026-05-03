@@ -1,14 +1,51 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Button from "@/components/Button";
 import { heroImages } from "@/data/images";
+import Image from "next/image";
+
+interface Particle {
+  width: number;
+  height: number;
+  left: string;
+  top: string;
+  xMove: number;
+  duration: number;
+}
+
+const PARTICLE_COUNT = 6;
+
+// Helper function to generate random particles
+function generateParticles(): Particle[] {
+  const particles: Particle[] = [];
+  for (let i = 0; i < PARTICLE_COUNT; i++) {
+    particles.push({
+      width: Math.random() * 20 + 10,
+      height: Math.random() * 20 + 10,
+      left: `${Math.random() * 100}%`,
+      top: `${Math.random() * 100}%`,
+      xMove: Math.random() * 40 - 20,
+      duration: Math.random() * 5 + 5,
+    });
+  }
+  return particles;
+}
 
 export default function HeroSection() {
   const [currentImage, setCurrentImage] = useState(0);
+  const [imagesLoaded, setImagesLoaded] = useState(0);
+  const [particles] = useState<Particle[]>(generateParticles);
 
   const images = heroImages.map((img) => img.url);
+
+  const handleImageLoad = useCallback(() => {
+    setImagesLoaded(prev => prev + 1);
+  }, []);
+
+  const totalImages = images.length;
+  const isReady = imagesLoaded >= totalImages;
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -23,19 +60,29 @@ export default function HeroSection() {
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden" aria-label="Hero Section">
-      {/* Animated background images */}
+      {/* Animated background images - optimized with Next.js Image */}
       <div className="absolute inset-0 z-0">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentImage}
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${images[currentImage]})` }}
+            className="absolute inset-0"
             initial={{ opacity: 0, scale: 1.15 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 1.8, ease: "easeInOut" }}
             aria-hidden="true"
-          />
+          >
+            <Image
+              src={images[currentImage]}
+              alt={heroImages[currentImage]?.alt || "Hero background"}
+              fill
+              priority
+              quality={80}
+              sizes="100vw"
+              className="object-cover"
+              onLoadingComplete={handleImageLoad}
+            />
+          </motion.div>
         </AnimatePresence>
         {/* Multiple gradient overlays for better text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
@@ -44,23 +91,23 @@ export default function HeroSection() {
 
       {/* Animated floating particles */}
       <div className="absolute inset-0 z-10 pointer-events-none overflow-hidden" aria-hidden="true">
-        {Array.from({ length: 6 }).map((_, i) => (
+        {particles.map((p, i) => (
           <motion.div
             key={i}
             className="absolute rounded-full bg-gold/20 blur-sm"
             style={{
-              width: Math.random() * 20 + 10,
-              height: Math.random() * 20 + 10,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
+              width: p.width,
+              height: p.height,
+              left: p.left,
+              top: p.top,
             }}
             animate={{
               y: [0, -50, 0],
-              x: [0, Math.random() * 40 - 20, 0],
+              x: [0, p.xMove, 0],
               opacity: [0.2, 0.5, 0.2],
             }}
             transition={{
-              duration: Math.random() * 5 + 5,
+              duration: p.duration,
               repeat: Infinity,
               ease: "easeInOut",
             }}

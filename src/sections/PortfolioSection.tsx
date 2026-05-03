@@ -7,6 +7,7 @@ import { portfolioItems, portfolioCategories } from "@/data/portfolio";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import { FiEye, FiCalendar } from "react-icons/fi";
+import Image from "next/image";
 
 export default function PortfolioSection() {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -91,12 +92,16 @@ export default function PortfolioSection() {
                 onKeyPress={(e) => e.key === "Enter" && openLightbox(index)}
               >
                 {/* Image */}
-                <div
-                  className="h-64 bg-cover bg-center group-hover:scale-110 transition-transform duration-700"
-                  style={{ backgroundImage: `url(${item.image}?w=800&q=80)` }}
-                  role="img"
-                  aria-label={item.imageAlt}
-                />
+                <div className="h-64 overflow-hidden">
+                  <Image
+                    src={item.image}
+                    alt={item.imageAlt}
+                    fill
+                    quality={80}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                </div>
 
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" aria-hidden="true" />

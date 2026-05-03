@@ -178,6 +178,13 @@ export default function ContactSection() {
                     color: "text-gold",
                   },
                   {
+                    icon: FaWhatsapp,
+                    title: "واتساب",
+                    content: "01067894321",
+                    link: "https://wa.me/201067894321",
+                    color: "text-[#25D366]",
+                  },
+                  {
                     icon: FaMapMarkerAlt,
                     title: "العنوان",
                     content: "دار السلام، شارع الفيوم، القاهرة، مصر",
@@ -191,6 +198,14 @@ export default function ContactSection() {
                     link: null,
                     color: "text-gold",
                   },
+                  {
+                    icon: FaWhatsapp,
+                    title: "الرقم الضريبي",
+                    content: "271-810-343",
+                    link: null,
+                    color: "text-gold",
+                    isTax: true,
+                  },
                 ].map((item, index) => (
                   <motion.div
                     key={index}
@@ -201,11 +216,17 @@ export default function ContactSection() {
                     transition={{ delay: index * 0.15 }}
                   >
                     <div className={`w-12 h-12 bg-dark-bg/80 border border-gold/20 rounded-xl flex items-center justify-center group-hover:border-gold/50 transition-colors`}>
-                      <item.icon size={20} className={item.color} />
+                      {item.isTax ? (
+                        <span className="text-xl">🧾</span>
+                      ) : (
+                        <item.icon size={20} className={item.color} />
+                      )}
                     </div>
                     <div>
                       <p className="text-white font-bold mb-1">{item.title}</p>
-                      {item.link ? (
+                      {item.isTax ? (
+                        <p className="text-gold font-bold text-lg">{item.content}</p>
+                      ) : item.link ? (
                         <a
                           href={item.link}
                           className="text-gray-300 hover:text-gold transition-colors"

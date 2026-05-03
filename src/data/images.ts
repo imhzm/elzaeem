@@ -34,7 +34,7 @@ export const heroImages: ImageMetadata[] = [
 ];
 
 export const aboutImage: ImageMetadata = {
-  url: "/images/5.png",
+  url: "/images/5.jpg",
   width: 800,
   height: 600,
   alt: "فريق عمل مركز الزعيم الدولي",
@@ -43,7 +43,7 @@ export const aboutImage: ImageMetadata = {
 // Additional section images
 export const sectionImages = {
   services: {
-    background: "/images/6.png",
+    background: "/images/6.jpg",
     overlay: "/images/7.jpg",
   },
   portfolio: {

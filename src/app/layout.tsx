@@ -98,11 +98,12 @@ export const structuredData = {
   description:
     "مركز الزعيم الدولي لكماليات السيارات والطباعة والدعاية والإعلان. نقدم شاشات أندرويد، ليدات، أفلام حماية، واجهات كلادينج، بنرات، ورول أب بأعلى جودة.",
   url: baseUrl,
-  telephone: "+201234567890",
-  email: "info@elzaeem-international.com",
+  telephone: "+201067894321",
+  email: "admin@skywaveads.com",
+  taxID: "271-810-343",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "شارع فيصل، دار السلام",
+    streetAddress: "شارع الفيوم، دار السلام",
     addressLocality: "القاهرة",
     addressRegion: "القاهرة",
     postalCode: "11744",

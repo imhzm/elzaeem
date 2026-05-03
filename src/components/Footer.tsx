@@ -130,12 +130,16 @@ export default function Footer() {
               </motion.a>
             ))}
           </div>
-          <div className="space-y-2">
-            <p className="text-gray-300 flex items-center gap-2">
+          <div className="space-y-3">
+            <p className="text-gray-300 flex items-center gap-2 text-lg">
               <span className="text-gold">📞</span>
-              <a href="tel:+201067894321" className="hover:text-gold transition-colors">
+              <a href="tel:+201067894321" className="hover:text-gold transition-colors font-bold">
                 01067894321
               </a>
+            </p>
+            <p className="text-gray-300 flex items-center gap-2 text-lg">
+              <span className="text-gold">🧾</span>
+              <span className="font-medium">الرقم الضريبي: 271-810-343</span>
             </p>
             <p className="text-gray-300 flex items-center gap-2">
               <span className="text-gold">📍</span>
