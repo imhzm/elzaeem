@@ -39,10 +39,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "ELZAEEM INTERNATIONAL", url: baseUrl }],
   creator: "ELZAEEM INTERNATIONAL",
-  publisher: {
-    name: "ELZAEEM INTERNATIONAL",
-    url: baseUrl,
-  },
+  publisher: "ELZAEEM INTERNATIONAL",
   alternates: {
     canonical: baseUrl,
   },
