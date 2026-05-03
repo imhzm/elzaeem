@@ -24,9 +24,6 @@ const nextConfig: NextConfig = {
 
   // Compress output
   compress: true,
-
-  // Generate ESM output
-  outputMode: "output",
 };
 
 export default nextConfig;
