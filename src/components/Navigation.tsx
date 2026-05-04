@@ -64,7 +64,7 @@ export default function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          {/* Logo with SVG for crisp display */}
+          {/* Logo */}
           <motion.a
             href="/#home"
             className="flex items-center gap-3 group relative z-10"
@@ -72,33 +72,31 @@ export default function Navigation() {
             whileTap={{ scale: 0.98 }}
             aria-label="الزعيم الدولي - الرئيسية"
           >
-            <div className="relative">
-              {/* Gold ring around logo */}
-              <motion.div
-                className="absolute inset-0 rounded-full bg-gold/10 blur-md"
-                initial={{ scale: 0.9, opacity: 0 }}
-                animate={{ scale: 1, opacity: 0.5 }}
-                transition={{ duration: 0.5 }}
+            <div className="relative w-12 h-12 md:w-14 md:h-14 flex-shrink-0">
+              <Image
+                src="/images/logo.png"
+                alt="الزعيم الدولي"
+                fill
+                className="object-contain"
+                priority
               />
-
-              {/* ELZAEEM Text Logo */}
-              <div className="relative z-10 flex flex-col items-center">
-                <span className="text-3xl font-black tracking-tighter">ELZAEEM</span>
-                <span className="text-sm font-medium text-gold-600">INTERNATIONAL</span>
-              </div>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-xl md:text-2xl font-black tracking-tighter text-gold">ELZAEEM</span>
+              <span className="text-xs md:text-sm font-medium text-gold/80">INTERNATIONAL</span>
             </div>
           </motion.a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-2 relative z-10">
+          <div className="hidden md:flex items-center gap-1 relative z-10">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="relative px-4 py-2.5 text-gray-300 hover:text-gold transition-all duration-300 text-sm font-medium group"
+                className="relative px-5 py-2.5 text-gray-300 hover:text-gold transition-all duration-300 text-sm font-medium group rounded-lg hover:bg-gold/5"
               >
                 {link.label}
-                <span className="absolute -bottom-0 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-2 group-hover:h-1 rounded-full opacity-0 group-hover:opacity-100" />
+                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-3/4 rounded-full opacity-0 group-hover:opacity-100" />
               </a>
             ))}
           </div>

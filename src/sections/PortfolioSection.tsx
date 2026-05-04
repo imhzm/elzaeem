@@ -92,7 +92,7 @@ export default function PortfolioSection() {
                 onKeyPress={(e) => e.key === "Enter" && openLightbox(index)}
               >
                 {/* Image */}
-                <div className="h-64 overflow-hidden">
+                <div className="h-72 md:h-80 overflow-hidden">
                   <Image
                     src={item.image}
                     alt={item.imageAlt}
