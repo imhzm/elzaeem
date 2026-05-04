@@ -18,7 +18,7 @@ export const automotiveServices: Service[] = [
     descriptionAr:
       "شاشات أندرويد حديثة، دعم Apple CarPlay و Android Auto، Bluetooth، GPS، دعم كاميرات أمامية وخلفية، وتجربة قيادة أذكى لسيارتك.",
     icon: "MdScreenShare",
-    image: "/images/1.jpg",
+    image: "https://images.unsplash.com/photo-1503376760166-2997225d0d0?w=800&q=80&auto=format",
     imageAlt: "شاشة أندرويد حديثة لسيارة مع نظام ملاحة",
     category: "automotive",
     features: ["شاشات أندرويد أصلية", "Apple CarPlay و Android Auto", "كاميرا خلفية", "GPS مدمج", "Bluetooth"],
@@ -30,7 +30,7 @@ export const automotiveServices: Service[] = [
     descriptionAr:
       "إضاءة LED احترافية للسيارات، أقوى وأوضح رؤية، مظهر عصري، وتركيب متوافق مع جميع موديلات السيارات.",
     icon: "MdLightbulb",
-    image: "/images/2.jpg",
+    image: "https://images.unsplash.com/photo-1558618666-fb2583e13990?w=800&q=80&auto=format",
     imageAlt: "إضاءة LED احترافية لسيارة",
     category: "automotive",
     features: ["LED أمامية وخلفية", "إضاءة داخلية ملونة", "أضواء DRL", "رياض LEDs", "تثبيت احترافي"],
@@ -42,7 +42,7 @@ export const automotiveServices: Service[] = [
     descriptionAr:
       "أفلام حماية عالية الجودة تحمي البوية من الخدوش، التراب، الشمس، وآثار الاستخدام اليومي لسيارتك.",
     icon: "MdShield",
-    image: "/images/3.jpg",
+    image: "https://images.unsplash.com/photo-1557682250-33bd709cbe85?w=800&q=80&auto=format",
     imageAlt: "سيارة محمية بفيلم حماية احترافي",
     category: "automotive",
     features: ["حماية كاملة للسيارة", "مقاومة الخدوش", "حماية من الشمس", "شفافية عالية", "ضمان حقيقي"],
@@ -52,9 +52,9 @@ export const automotiveServices: Service[] = [
     titleAr: "فاميه سيارات",
     titleEn: "Car Tint",
     descriptionAr:
-      "أفلام فاميه عالية الجودة توفر خصوصية، تقلل الحرارة، تمنح مظهراً أنيقاً، وتحسن تجربة القيادة.",
+      "أفلام فاميه عالية الجودة توفر خصوصية، تقلل الحرارة، تمنح مظهرًا أنيقًا، وتحسن تجربة القيادة.",
     icon: "MdOpacity",
-    image: "/images/4.jpg",
+    image: "https://images.unsplash.com/photo-1558618037-099404cd5d86?w=800&q=80&auto=format",
     imageAlt: "سيارة بفاميه زجاج عالية الجودة",
     category: "automotive",
     features: ["خصوصية عالية", "تقليل الحرارة 80%", "حماية من الأشعة UV", "أنواع متعددة", "تركيب احترافي"],
@@ -64,12 +64,12 @@ export const automotiveServices: Service[] = [
     titleAr: "أنظمة صوتية",
     titleEn: "Sound Systems",
     descriptionAr:
-      "تركيب أنظمة صوتية احترافية للسيارات، سماعات، صب، جي إم، وتجهيزات صوتية بجودة عالية لتجربة صوتية متميزة.",
+      "تركيب أنظمة صوتية احترافية للسيارات، سماعات، صب، جي أمبر، وتجهيزات صوتية بجودة عالية لتجربة صوتية متميزة.",
     icon: "MdSpeaker",
-    image: "/images/5.jpg",
+    image: "https://images.unsplash.com/photo-1552519501-007675416839?w=800&q=80&auto=format",
     imageAlt: "نظام صوتي احترافي للسيارات",
     category: "automotive",
-    features: ["سماعات احترافية", "صب وتسليف", "جي إم أصلية", "ضبط صوتي احترافي", "ضمان على التركيب"],
+    features: ["سماعات احترافية", "صب وتسليف", "جي أمبر أصلية", "ضبط صوتي احترافي", "ضمان على التركيب"],
   },
   {
     id: "car-upholstery",
@@ -78,8 +78,8 @@ export const automotiveServices: Service[] = [
     descriptionAr:
       "فرش جلد عالي الجودة، تفصيل حسب الطلب، حماية داخلية، وتنسيق حسب شكل السيارة لراحة وجمال الداخلية.",
     icon: "MdAirlineSeatReclineNormal",
-    image: "/images/6.jpg",
-    imageAlt: "فرش جلد احترافي لسيارة",
+    image: "https://images.unsplash.com/photo-1503376780353-779296dcef46?w=800&q=80&auto=format",
+    imageAlt: "فرش جلد احترافي لسيارة فاخرة",
     category: "automotive",
     features: ["جلد طبيعي وصناعي", "تفصيل حسب الطلب", "ألوان متعددة", "تركيب احترافي", "ضمان الجودة"],
   },
@@ -93,7 +93,7 @@ export const printingServices: Service[] = [
     descriptionAr:
       "تصميم وتنفيذ واجهات احترافية للمحلات والشركات والمولات والمعارض بخامات مقاومة ومظهر عصري.",
     icon: "MdBusiness",
-    image: "/images/7.jpg",
+    image: "https://images.unsplash.com/photo-1557682250-33bd709cbe85?w=800&q=80&auto=format",
     imageAlt: "واجهة كلادينج احترافية لمحل تجاري",
     category: "printing",
     features: ["كلادينج ACP", "تصميم 3D", "خامات مقاومة", "ألوان متعددة", "تنفيذ سريع"],
@@ -105,8 +105,8 @@ export const printingServices: Service[] = [
     descriptionAr:
       "حلول زجاج للمكاتب والشركات والمدارس تعطي خصوصية ومظهر منظم لبيئة العمل بتصاميم متنوعة.",
     icon: "MdBlurOn",
-    image: "/images/8.jpg",
-    imageAlt: "زجاج سنفر لمكتب إداري",
+    image: "https://images.unsplash.com/photo-1497366424716-bec30297d502?w=800&q=80&auto=format",
+    imageAlt: "زجاج مسنفر لمكتب إداري",
     category: "printing",
     features: ["زجاج فاميه", "زجاج مسنفر", "تصاميم مخصصة", "خصوصية تامة", "سهولة التركيب"],
   },
@@ -117,10 +117,10 @@ export const printingServices: Service[] = [
     descriptionAr:
       "لوجوهات احترافية، عروض، تغطية زجاج كاملة أو جزئية، وقص احترافي لواجهات المحلات والشركات.",
     icon: "MdLabel",
-    image: "/images/9.jpg",
+    image: "https://images.unsplash.com/photo-1549399542-7e3f8b79c43?w=800&q=80&auto=format",
     imageAlt: "استيكرات احترافية لواجهة محل",
     category: "printing",
-    features: ["فينيل عالي الجودة", "قص ليزر", "تصاميم مخصصة", "ألوان ثابتة", "مقاوم للعوامل الجوية"],
+    features: ["فينيل عالي الجودة", "قص ليزر", "تصاميم مخصصة", "ألوان ثابتة", "مقاومة للعوامل الجوية"],
   },
   {
     id: "banners-rollups",
@@ -129,7 +129,7 @@ export const printingServices: Service[] = [
     descriptionAr:
       "تصميم وطباعة للمعارض والشركات والمولات والحملات الترويجية بجودة عالية وألوان زاهية.",
     icon: "MdPhotoSizeSelectLarge",
-    image: "/images/10.jpg",
+    image: "https://images.unsplash.com/photo-1558618037-099404cd5d86?w=800&q=80&auto=format",
     imageAlt: "بانر دعائي احترافي",
     category: "printing",
     features: ["بنرات كبيرة", "رول أب خفيفة", "أقمشة متعددة", "طباعة عالية الجودة", "ألوان ثابتة"],
@@ -139,9 +139,9 @@ export const printingServices: Service[] = [
     titleAr: "لوحات داخلية وخارجية",
     titleEn: "Indoor & Outdoor Signs",
     descriptionAr:
-      "لوحات إرشادية، لوحات محلات، لوحات شركات، ولافتات دعائية بتصاميم جذابة ومتينة.",
+      "لوحات إرشادية، لوحات محلات، لوحات شركات، ولافتات دعائية بتصاميم جذابة ومميزة.",
     icon: "MdSignpost",
-    image: "/images/11.jpg",
+    image: "https://images.unsplash.com/photo-1557682250-33bd709cbe85?w=800&q=80&auto=format",
     imageAlt: "لوحة إرشادية احترافية",
     category: "printing",
     features: ["لوحات نيون", "لوحات LED", "ألومنيوم", "أكريليك", "خامات متعددة"],
@@ -153,7 +153,7 @@ export const printingServices: Service[] = [
     descriptionAr:
       "طباعة مواد تسويقية للبراندات والمناسبات والعروض بأحدث تكنولوجيا الطباعة وأعلى جودة.",
     icon: "MdPrint",
-    image: "/images/12.jpg",
+    image: "https://images.unsplash.com/photo-1557682250-33bd709cbe85?w=800&q=80&auto=format",
     imageAlt: "بوستر دعائي احترافي",
     category: "printing",
     features: ["بوسترات كبيرة", "كروت دعوية", "فلايرات", "بروشورات", "طباعة دقيقة"],
