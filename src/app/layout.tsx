@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Cairo } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
@@ -55,7 +55,6 @@ export const metadata: Metadata = {
     ],
   },
   manifest: "/manifest.webmanifest",
-  themeColor: "#D4AF37",
   openGraph: {
     type: "website",
     locale: "ar_EG",
@@ -155,6 +154,13 @@ export const structuredData = {
     ratingValue: "4.8",
     reviewCount: "250",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#D4AF37",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({
