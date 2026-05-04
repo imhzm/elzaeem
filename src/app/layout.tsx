@@ -14,6 +14,8 @@ const cairo = Cairo({
 
 const baseUrl = "https://elzaeem-international.skywaveads.com";
 const ogImage = `${baseUrl}/images/logo.png`;
+const favicon = `${baseUrl}/favicon.ico`;
+const appleIcon = `${baseUrl}/images/logo.png`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -40,6 +42,17 @@ export const metadata: Metadata = {
   publisher: "ELZAEEM INTERNATIONAL",
   alternates: {
     canonical: baseUrl,
+  },
+  icons: {
+    icon: [
+      { url: favicon, sizes: "32x32", type: "image/png" },
+      { url: favicon, sizes: "16x16", type: "image/png" },
+      { url: favicon, sizes: "192x192", type: "image/png" },
+      { url: favicon, sizes: "512x512", type: "image/png" },
+    ],
+    apple: [
+      { url: appleIcon, sizes: "180x180", type: "image/png" },
+    ],
   },
   manifest: "/manifest.webmanifest",
   themeColor: "#D4AF37",
