@@ -29,11 +29,13 @@ export default function HeroSection() {
   const [imagesLoaded, setImagesLoaded] = useState(0);
   const [particles] = useState<Particle[]>(generateParticles);
 
+  const images = heroImages.map((img) => img.url);
+
   const handleImageLoad = useCallback(() => {
     setImagesLoaded(prev => prev + 1);
   }, []);
 
-  const totalImages = heroImages.length;
+  const totalImages = images.length;
   const isReady = imagesLoaded >= totalImages;
 
   useEffect(() => {
@@ -62,7 +64,7 @@ export default function HeroSection() {
             aria-hidden="true"
           >
             <Image
-              src={heroImages[currentImage].url}
+              src={images[currentImage]}
               alt={heroImages[currentImage]?.alt || "Hero background"}
               fill
               priority
@@ -87,7 +89,7 @@ export default function HeroSection() {
           className="mb-8"
         >
           <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-4">
-            <span className="text-gold text-glow">الزعيم الدولي</span>
+            <span className="text-gold">الزعيم الدولي</span>
           </h1>
           <h2 className="text-xl md:text-2xl text-gray-300 font-medium leading-relaxed">
             الحلول المتكاملة لكماليات السيارات
@@ -139,7 +141,7 @@ export default function HeroSection() {
 
       {/* Image Navigation Dots */}
       <div className="absolute bottom-32 left-1/2 -translate-x-1/2 flex gap-3 z-20">
-        {heroImages.map((_, index) => (
+        {images.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
