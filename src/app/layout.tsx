@@ -183,7 +183,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-transparent text-foreground overflow-x-hidden">
         <BackgroundAnimations />
         <ScrollProgress />
-        <Navigation logo="/images/logo.png" />
+        <Navigation />
         <main className="relative z-10 flex-1">{children}</main>
       </body>
     </html>

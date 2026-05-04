@@ -6,6 +6,15 @@ import Button from "@/components/Button";
 import { heroImages } from "@/data/images";
 import Image from "next/image";
 
+interface Particle {
+  width: number;
+  height: number;
+  left: string;
+  top: string;
+  xMove: number;
+  duration: number;
+}
+
 const PARTICLE_COUNT = 4;
 
 // Helper function to generate random particles
