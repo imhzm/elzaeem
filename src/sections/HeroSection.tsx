@@ -6,15 +6,6 @@ import Button from "@/components/Button";
 import { heroImages } from "@/data/images";
 import Image from "next/image";
 
-interface Particle {
-  width: number;
-  height: number;
-  left: string;
-  top: string;
-  xMove: number;
-  duration: number;
-}
-
 const PARTICLE_COUNT = 4;
 
 // Helper function to generate random particles
@@ -38,19 +29,17 @@ export default function HeroSection() {
   const [imagesLoaded, setImagesLoaded] = useState(0);
   const [particles] = useState<Particle[]>(generateParticles);
 
-  const images = heroImages.map((img) => img.url);
-
   const handleImageLoad = useCallback(() => {
     setImagesLoaded(prev => prev + 1);
   }, []);
 
-  const totalImages = images.length;
+  const totalImages = heroImages.length;
   const isReady = imagesLoaded >= totalImages;
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 8000); // Slower rotation for better UX
+    }, 8000);
     return () => clearInterval(interval);
   }, [images.length]);
 
@@ -60,7 +49,7 @@ export default function HeroSection() {
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden" aria-label="Hero Section">
-      {/* Animated background images - using optimized img tags for CDN */}
+      {/* Animated background images - using Next.js Image with priority */}
       <div className="absolute inset-0 z-0">
         <AnimatePresence mode="wait">
           <motion.div
@@ -72,13 +61,15 @@ export default function HeroSection() {
             transition={{ duration: 1.5, ease: "easeInOut" }}
             aria-hidden="true"
           >
-            {/* Using regular img tag for CDN URLs to avoid Next.js Image issues */}
-            <img
-              src={images[currentImage]}
+            <Image
+              src={heroImages[currentImage].url}
               alt={heroImages[currentImage]?.alt || "Hero background"}
-              className="w-full h-full object-cover"
-              style={{ opacity: 0.7 }}
-              onLoad={handleImageLoad}
+              fill
+              priority
+              quality={85}
+              sizes="100vw"
+              className="object-cover"
+              onLoadingComplete={handleImageLoad}
             />
           </motion.div>
         </AnimatePresence>
@@ -148,7 +139,7 @@ export default function HeroSection() {
 
       {/* Image Navigation Dots */}
       <div className="absolute bottom-32 left-1/2 -translate-x-1/2 flex gap-3 z-20">
-        {images.map((_, index) => (
+        {heroImages.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
