@@ -15,7 +15,7 @@ import CallNowButton from "@/components/CallNowButton";
 import Preloader from "@/components/Preloader";
 
 const baseUrl = "https://elzaeem-international.skywaveads.com";
-const ogImage = "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1200&q=80";
+const ogImage = `${baseUrl}/images/logo.png`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
