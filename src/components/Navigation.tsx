@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback, useMemo } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Button from "@/components/Button";
@@ -19,7 +19,7 @@ interface NavigationProps {
   logo?: string;
 }
 
-export default function Navigation({ logo = "/images/logo.png" }: NavigationProps) {
+export default function Navigation({ logo }: NavigationProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -63,12 +63,11 @@ export default function Navigation({ logo = "/images/logo.png" }: NavigationProp
     return () => { document.body.style.overflow = ""; };
   }, [isMobileMenuOpen]);
 
-  const navClass = useMemo(() =>
-    `fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled
-        ? "glass-strong shadow-lg shadow-black/30 border-b border-gold/10"
-        : "bg-transparent"
-    }`, [isScrolled]);
+  const navClass = `fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    isScrolled
+      ? "glass-strong shadow-lg shadow-black/30 border-b border-gold/10"
+      : "bg-transparent"
+  }`;
 
   return (
     <motion.nav
@@ -82,46 +81,39 @@ export default function Navigation({ logo = "/images/logo.png" }: NavigationProp
           {/* Logo */}
           <motion.a
             href="/#home"
-            className="flex items-center gap-3 group"
+            className="flex items-center gap-3 group relative z-10"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <div className="relative w-12 h-12 rounded-xl bg-gradient-to-br from-gold/20 to-gold/5 border border-gold/30 flex items-center justify-center overflow-hidden">
-              <Image
-                src={logo}
-                alt="مركز الزعيم الدولي"
-                width={48}
-                height={48}
-                className="object-contain"
-                priority
-              />
+            <div className="relative w-14 h-14 rounded-xl bg-gradient-to-br from-gold/20 to-gold/5 border-2 border-gold/40 flex items-center justify-center overflow-hidden shadow-[0_4px_rgba(212,175,55,0.3)]">
+              <span className="text-2xl font-bold text-gold tracking-wider">Z</span>
             </div>
             <div className="flex flex-col">
-              <span className="text-lg font-bold text-gold text-glow-strong leading-tight">
+              <span className="text-xl font-bold text-gold leading-none tracking-wide">
                 ELZAEEM
               </span>
-              <span className="text-xs text-gray-400">
+              <span className="text-xs text-gray-400 leading-none tracking-wider">
                 INTERNATIONAL
               </span>
             </div>
           </motion.a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden md:flex items-center gap-2 relative z-10">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="relative px-4 py-2 text-gray-300 hover:text-gold transition-colors duration-300 text-sm font-medium group"
+                className="relative px-5 py-2.5 text-gray-300 hover:text-gold transition-all duration-300 text-sm font-medium group z-10"
               >
                 {link.label}
-                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-3/4 rounded-full shadow-[0_0_8px_rgba(212,175,55,0.5)]" />
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
           </div>
 
           {/* WhatsApp CTA */}
-          <div className="hidden md:block">
+          <div className="hidden md:block relative z-10">
             <Button
               variant="whatsapp"
               size="sm"
@@ -134,10 +126,10 @@ export default function Navigation({ logo = "/images/logo.png" }: NavigationProp
 
           {/* Mobile Menu Button */}
           <motion.button
-            className="md:hidden text-gold text-2xl w-10 h-10 flex items-center justify-center rounded-lg border border-gold/20 bg-dark-card/50 backdrop-blur-sm"
+            className="md:hidden text-gold text-2xl w-10 h-10 flex items-center justify-center rounded-lg border border-gold/20 bg-dark-card/50 backdrop-blur-sm relative z-20"
             onClick={toggleMobileMenu}
             aria-label="قائمة التنقل"
-            whileTap={{ scale: 0.9 }}
+            whileTap={{ scale: 0.95 }}
           >
             <AnimatePresence mode="wait">
               {isMobileMenuOpen ? (
@@ -170,22 +162,22 @@ export default function Navigation({ logo = "/images/logo.png" }: NavigationProp
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            className="md:hidden fixed inset-0 top-20 z-40 glass-strong border-t border-gold/10"
+            className="md:hidden fixed inset-0 top-20 z-40 glass-strong border-t border-gold/10 backdrop-blur-xl"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
           >
-            <div className="flex flex-col h-full px-6 py-8 gap-2">
+            <div className="flex flex-col h-full px-6 py-8 gap-2 overflow-y-auto">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="flex items-center gap-3 text-lg text-gray-300 hover:text-gold transition-colors duration-300 py-3 px-4 rounded-lg hover:bg-gold/5 border-b border-gold/5"
+                  className="flex items-center gap-4 text-lg text-gray-300 hover:text-gold transition-all duration-300 py-4 px-5 rounded-xl hover:bg-gold/5 border-b border-gold/5 relative"
                   onClick={closeMobileMenu}
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-gold/50" />
-                  {link.label}
+                  <span className="w-2 h-2 rounded-full bg-gold/50" />
+                  <span className="font-medium">{link.label}</span>
                 </a>
               ))}
               <div className="mt-auto pt-6 border-t border-gold/10">
