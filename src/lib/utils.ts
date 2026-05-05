@@ -7,7 +7,7 @@ export function cn(...inputs: ClassValue[]) {
 
 export function getWhatsAppLink(
   phone: string = "201067894321",
-  message: string = "مرحبًا، أريد طلب عرض سعر من مركز الزعيم الدولي"
+  message: string = "مرحبًا، أريد طلب عرض سعر من مركز الزعيم الدولي لكماليات السيارات"
 ) {
   return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 }

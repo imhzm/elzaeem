@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 export default function WhatsAppButton() {
   return (
     <motion.a
-      href={getWhatsAppLink("201067894321", "مرحبًا، أريد طلب عرض سعر من مركز الزعيم الدولي")}
+      href={getWhatsAppLink("201067894321", "مرحبًا، أريد طلب عرض سعر من مركز الزعيم الدولي لكماليات السيارات")}
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 left-6 z-50 group"

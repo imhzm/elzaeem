@@ -1,7 +1,7 @@
 {
-  "name": "مركز الزعيم الدولي | ELZAEEM INTERNATIONAL",
+  "name": "مركز الزعيم الدولي لكماليات السيارات",
   "short_name": "الزعيم الدولي",
-  "description": "الحلول المتكاملة لكماليات السيارات والطباعة والدعاية والإعلان",
+  "description": "مركز الزعيم الدولي لكماليات السيارات - الحلول المتكاملة لكماليات السيارات والطباعة والدعاية والإعلان",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0a0a0a",
@@ -26,13 +26,13 @@
   "categories": ["automotive", "business", "services"],
   "screenshots": [
     {
-      "src": "/images/1.png",
+      "src": "/images/hero-1.png",
       "sizes": "540x720",
       "type": "image/png",
       "form_factor": "narrow"
     },
     {
-      "src": "/images/2.png",
+      "src": "/images/hero-2.png",
       "sizes": "1280x720",
       "type": "image/png",
       "form_factor": "wide"

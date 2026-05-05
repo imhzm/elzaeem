@@ -20,11 +20,11 @@ const appleIcon = `${baseUrl}/images/logo.png`;
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: "مركز الزعيم الدولي | كماليات سيارات وطباعة ودعاية",
-    template: "%s | مركز الزعيم الدولي",
+    default: "مركز الزعيم الدولي لكماليات السيارات | طباعة ودعاية وإعلان",
+    template: "%s | مركز الزعيم الدولي لكماليات السيارات",
   },
   description:
-    "مركز الزعيم الدولي - الحلول المتكاملة لكماليات السيارات والطباعة والدعاية والإعلان. شاشات أندرويد، ليدات، أفلام حماية، واجهات كلادينج، بنرات، ورول أب بأعلى جودة في مصر.",
+    "مركز الزعيم الدولي لكماليات السيارات - الحلول المتكاملة لكماليات السيارات والطباعة والدعاية والإعلان. شاشات أندرويد، ليدات، أفلام حماية، واجهات كلادينج، بنرات، ورول أب بأعلى جودة في مصر. الرقم الضريبي: 271-810-343",
   keywords: [
     "كماليات سيارات",
     "شاشات سيارات",
@@ -34,12 +34,12 @@ export const metadata: Metadata = {
     "طباعة دعاية وإعلان",
     "بنرات ورول أب",
     "استيكرات واجهات",
-    "مركز الزعيم الدولي",
+    "مركز الزعيم الدولي لكماليات السيارات",
     "Elzaeem International",
   ],
-  authors: [{ name: "ELZAEEM INTERNATIONAL", url: baseUrl }],
-  creator: "ELZAEEM INTERNATIONAL",
-  publisher: "ELZAEEM INTERNATIONAL",
+  authors: [{ name: "مركز الزعيم الدولي لكماليات السيارات", url: baseUrl }],
+  creator: "مركز الزعيم الدولي لكماليات السيارات",
+  publisher: "مركز الزعيم الدولي لكماليات السيارات",
   alternates: {
     canonical: baseUrl,
   },
@@ -60,25 +60,25 @@ export const metadata: Metadata = {
     locale: "ar_EG",
     alternateLocale: ["en_US"],
     url: baseUrl,
-    title: "مركز الزعيم الدولي | كماليات سيارات وطباعة ودعاية",
+    title: "مركز الزعيم الدولي لكماليات السيارات | طباعة ودعاية وإعلان",
     description:
-      "الحلول المتكاملة لكماليات السيارات والطباعة والدعاية والإعلان بأعلى جودة في مصر.",
-    siteName: "ELZAEEM INTERNATIONAL",
+      "مركز الزعيم الدولي لكماليات السيارات - الحلول المتكاملة لكماليات السيارات والطباعة والدعاية والإعلان بأعلى جودة في مصر.",
+    siteName: "مركز الزعيم الدولي لكماليات السيارات",
     images: [
       {
         url: ogImage,
         width: 1200,
         height: 630,
-        alt: "ELZAEEM INTERNATIONAL - كماليات سيارات وطباعة",
+        alt: "مركز الزعيم الدولي لكماليات السيارات - طباعة ودعاية وإعلان",
         type: "image/png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "مركز الزعيم الدولي | كماليات سيارات وطباعة ودعاية",
+    title: "مركز الزعيم الدولي لكماليات السيارات | طباعة ودعاية وإعلان",
     description:
-      "الحلول المتكاملة لكماليات السيارات والطباعة والدعاية والإعلان بأعلى جودة في مصر.",
+      "مركز الزعيم الدولي لكماليات السيارات - الحلول المتكاملة لكماليات السيارات والطباعة والدعاية والإعلان بأعلى جودة في مصر.",
     images: [ogImage],
     creator: "@elzaeem",
   },
@@ -92,8 +92,8 @@ export const metadata: Metadata = {
 export const structuredData = {
   "@context": "https://schema.org",
   "@type": "AutomotiveBusiness",
-  name: "مركز الزعيم الدولي | ELZAEEM INTERNATIONAL",
-  alternateName: ["ELZAEEM INTERNATIONAL", "الزعيم الدولي"],
+  name: "مركز الزعيم الدولي لكماليات السيارات",
+  alternateName: ["ELZAEEM INTERNATIONAL", "الزعيم الدولي", "مركز الزعيم الدولي لكماليات السيارات"],
   description:
     "مركز الزعيم الدولي لكماليات السيارات والطباعة والدعاية والإعلان. نقدم شاشات أندرويد، ليدات، أفلام حماية، واجهات كلادينج، بنرات، ورول أب بأعلى جودة.",
   url: baseUrl,
@@ -147,7 +147,7 @@ export const structuredData = {
     "https://www.facebook.com/elzaeeminternational",
     "https://www.instagram.com/elzaeeminternational",
     "https://twitter.com/elzaeem",
-    "https://wa.me/201234567890",
+    "https://wa.me/201067894321",
   ],
   aggregateRating: {
     "@type": "AggregateRating",

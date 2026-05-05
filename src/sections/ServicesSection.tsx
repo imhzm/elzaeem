@@ -9,6 +9,7 @@ import { IconType } from "react-icons/lib";
 import * as FaIcons from "react-icons/fa";
 import * as MdIcons from "react-icons/md";
 import { FiCheck } from "react-icons/fi";
+import Image from "next/image";
 
 const iconMap: Record<string, IconType> = {
   ...FaIcons,
@@ -33,13 +34,13 @@ function ServiceCard({ service, index }: ServiceCardProps) {
       transition={{ duration: 0.6, delay: index * 0.1 }}
     >
       <div className="relative h-52 overflow-hidden">
-        <motion.div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${service.image}?w=800&q=80)` }}
-          whileHover={{ scale: 1.1 }}
-          transition={{ duration: 0.7 }}
-          role="img"
-          aria-label={service.imageAlt}
+        <Image
+          src={service.image}
+          alt={service.imageAlt}
+          fill
+          className="object-cover group-hover:scale-110 transition-transform duration-700"
+          quality={80}
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-dark-bg/90 via-dark-bg/30 to-transparent" />
         <div className="absolute inset-0 flex items-center justify-center">

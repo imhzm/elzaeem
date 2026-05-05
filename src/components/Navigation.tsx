@@ -70,20 +70,20 @@ export default function Navigation() {
             className="flex items-center gap-3 group relative z-10"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            aria-label="الزعيم الدولي - الرئيسية"
+            aria-label="مركز الزعيم الدولي لكماليات السيارات - الرئيسية"
           >
             <div className="relative w-12 h-12 md:w-14 md:h-14 flex-shrink-0">
               <Image
                 src="/images/logo.png"
-                alt="الزعيم الدولي"
+                alt="مركز الزعيم الدولي لكماليات السيارات"
                 fill
                 className="object-contain"
                 priority
               />
             </div>
             <div className="flex flex-col">
-              <span className="text-xl md:text-2xl font-black tracking-tighter text-gold">ELZAEEM</span>
-              <span className="text-xs md:text-sm font-medium text-gold/80">INTERNATIONAL</span>
+              <span className="text-lg md:text-xl font-black tracking-tighter text-gold">الزعيم الدولي</span>
+              <span className="text-[10px] md:text-xs font-medium text-gold/80">لكماليات السيارات</span>
             </div>
           </motion.a>
 
@@ -125,7 +125,7 @@ export default function Navigation() {
               variant="whatsapp"
               size="sm"
               whatsapp
-              whatsappMessage="مرحبًا، أريد الاستفسار عن خدمات مركز الزعيم الدولي"
+              whatsappMessage="مرحبًا، أريد الاستفسار عن خدمات مركز الزعيم الدولي لكماليات السيارات"
             >
               تواصل معنا
             </Button>
@@ -216,7 +216,7 @@ export default function Navigation() {
                   variant="whatsapp"
                   size="lg"
                   whatsapp
-                  whatsappMessage="مرحبًا، أريد الاستفسار عن خدمات مركز الزعيم الدولي"
+                  whatsappMessage="مرحبًا، أريد الاستفسار عن خدمات مركز الزعيم الدولي لكماليات السيارات"
                   className="w-full justify-center"
                   onClick={closeMobileMenu}
                 >

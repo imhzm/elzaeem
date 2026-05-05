@@ -6,7 +6,7 @@ import SectionHeader from "@/components/SectionHeader";
 import Button from "@/components/Button";
 import { allServices } from "@/data/services";
 import { getWhatsAppLink } from "@/lib/utils";
-import { FaWhatsapp, FaPhone, FaMapMarkerAlt, FaClock } from "react-icons/fa";
+import { FaWhatsapp, FaPhone, FaMapMarkerAlt, FaClock, FaEnvelope } from "react-icons/fa";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -18,7 +18,7 @@ export default function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const message = `مرحبًا، أنا ${formData.name}، رقم هاتفي ${formData.phone}. أريد طلب ${formData.service ? `خدمة ${formData.service}` : "خدمة"}. التفاصيل: ${formData.details}`;
+    const message = `مرحبًا، أنا ${formData.name}، رقم هاتفي ${formData.phone}. أريد طلب ${formData.service ? `خدمة ${formData.service}` : "خدمة"} من مركز الزعيم الدولي لكماليات السيارات. التفاصيل: ${formData.details}`;
     window.open(getWhatsAppLink("201067894321", message), "_blank");
   };
 
@@ -185,6 +185,13 @@ export default function ContactSection() {
                     color: "text-[#25D366]",
                   },
                   {
+                    icon: FaEnvelope,
+                    title: "البريد الإلكتروني",
+                    content: "admin@skywaveads.com",
+                    link: "mailto:admin@skywaveads.com",
+                    color: "text-gold",
+                  },
+                  {
                     icon: FaMapMarkerAlt,
                     title: "العنوان",
                     content: "دار السلام، شارع الفيوم، القاهرة، مصر",
@@ -253,7 +260,7 @@ export default function ContactSection() {
                 variant="whatsapp"
                 size="lg"
                 whatsapp
-                whatsappMessage="مرحبًا، أريد التواصل مع مركز الزعيم الدولي"
+                whatsappMessage="مرحبًا، أريد التواصل مع مركز الزعيم الدولي لكماليات السيارات"
                 className="w-full justify-center text-lg py-4 shadow-xl shadow-[#25D366]/30"
               >
                 تواصل واتساب مباشر

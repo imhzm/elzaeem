@@ -1,6 +1,6 @@
 "use client";
 
-import { FaWhatsapp, FaFacebook, FaInstagram, FaTiktok } from "react-icons/fa";
+import { FaWhatsapp, FaFacebook, FaInstagram, FaTiktok, FaEnvelope } from "react-icons/fa";
 import { getWhatsAppLink } from "@/lib/utils";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -27,24 +27,24 @@ export default function Footer() {
             <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-gold/20 to-gold/5 border border-gold/30 flex items-center justify-center">
               <Image
                 src="/images/logo.png"
-                alt="مركز الزعيم الدولي"
+                alt="مركز الزعيم الدولي لكماليات السيارات"
                 width={64}
                 height={64}
                 className="object-contain"
               />
             </div>
             <div>
-              <h3 className="text-2xl font-bold text-gold tracking-wide text-glow-strong">
-                ELZAEEM
+              <h3 className="text-xl font-bold text-gold tracking-wide text-glow-strong">
+                مركز الزعيم الدولي
               </h3>
-              <p className="text-xs text-gray-400">INTERNATIONAL</p>
+              <p className="text-xs text-gray-400">لكماليات السيارات</p>
             </div>
           </div>
           <p className="text-gray-300 mb-6 leading-relaxed">
-            مركز الزعيم الدولي لكماليات السيارات والطباعة والدعاية والإعلان
+            مركز الزعيم الدولي لكماليات السيارات - الحلول المتكاملة لكماليات السيارات والطباعة والدعاية والإعلان
           </p>
           <motion.a
-            href={getWhatsAppLink("201067894321", "مرحبًا، أريد التواصل مع مركز الزعيم")}
+            href={getWhatsAppLink("201067894321", "مرحبًا، أريد التواصل مع مركز الزعيم الدولي لكماليات السيارات")}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-gold text-dark-bg px-6 py-3 rounded-lg font-bold hover:bg-gold-light transition-all duration-300 shadow-lg shadow-gold/20 btn-gold-glow"
@@ -87,7 +87,7 @@ export default function Footer() {
           </ul>
         </motion.div>
 
-        {/* Social Media */}
+        {/* Contact & Social Media */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -138,6 +138,12 @@ export default function Footer() {
               </a>
             </p>
             <p className="text-gray-300 flex items-center gap-2 text-lg">
+              <FaEnvelope className="text-gold" />
+              <a href="mailto:admin@skywaveads.com" className="hover:text-gold transition-colors font-medium">
+                admin@skywaveads.com
+              </a>
+            </p>
+            <p className="text-gray-300 flex items-center gap-2 text-lg">
               <span className="text-gold">🧾</span>
               <span className="font-medium">الرقم الضريبي: 271-810-343</span>
             </p>
@@ -158,7 +164,10 @@ export default function Footer() {
         transition={{ delay: 0.6 }}
       >
         <p>
-          © {new Date().getFullYear()} ELZAEEM INTERNATIONAL. جميع الحقوق محفوظة.
+          © {new Date().getFullYear()} مركز الزعيم الدولي لكماليات السيارات. جميع الحقوق محفوظة.
+        </p>
+        <p className="mt-2 text-gray-500 text-xs">
+          الرقم الضريبي: 271-810-343 | البريد الإلكتروني: admin@skywaveads.com
         </p>
       </motion.div>
     </footer>
