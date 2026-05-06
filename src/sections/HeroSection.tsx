@@ -76,8 +76,6 @@ export default function HeroSection() {
               alt={currentSlide.alt}
               fill
               priority={currentImage === 0}
-              quality={75}
-              sizes="100vw"
               className="object-cover"
             />
           </motion.div>
