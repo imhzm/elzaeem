@@ -194,7 +194,7 @@ export default function ContactSection() {
                   {
                     icon: FaMapMarkerAlt,
                     title: "العنوان",
-                    content: "دار السلام، شارع الفيوم، القاهرة، مصر",
+                    content: "١ شارع محمد السراج من شارع الفيوم، دار السلام، محافظة القاهرة، ١١٧١٦",
                     link: null,
                     color: "text-red-500",
                   },

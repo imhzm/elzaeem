@@ -102,10 +102,10 @@ export const structuredData = {
   taxID: "271-810-343",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "شارع الفيوم، دار السلام",
+    streetAddress: "١ شارع محمد السراج من شارع الفيوم، دار السلام",
     addressLocality: "القاهرة",
     addressRegion: "القاهرة",
-    postalCode: "11744",
+    postalCode: "11716",
     addressCountry: "EG",
   },
   geo: {

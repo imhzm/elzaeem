@@ -87,7 +87,7 @@ const privacySections = [
 📞 الهاتف: 01067894321
 📱 واتساب: 01067894321
 🧾 الرقم الضريبي: 271-810-343
-📍 العنوان: دار السلام، شارع الفيوم، القاهرة، مصر
+📍 العنوان: ١ شارع محمد السراج من شارع الفيوم، دار السلام، محافظة القاهرة، ١١٧١٦
 📧 البريد الإلكتروني: admin@skywaveads.com`,
   },
 ];
@@ -104,7 +104,7 @@ export default function PrivacyPage() {
         sections={privacySections}
         contactInfo={{
           phone: "01067894321",
-          address: "دار السلام، شارع الفيوم، القاهرة، مصر",
+          address: "١ شارع محمد السراج من شارع الفيوم، دار السلام، محافظة القاهرة، ١١٧١٦",
           email: "admin@skywaveads.com",
         }}
         relatedLinks={[

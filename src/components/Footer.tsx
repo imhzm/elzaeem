@@ -149,7 +149,7 @@ export default function Footer() {
             </p>
             <p className="text-gray-300 flex items-center gap-2">
               <span className="text-gold">📍</span>
-              <span>دار السلام، شارع الفيوم، القاهرة</span>
+              <span>١ شارع محمد السراج من شارع الفيوم، دار السلام، محافظة القاهرة، ١١٧١٦</span>
             </p>
           </div>
         </motion.div>
