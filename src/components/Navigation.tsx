@@ -82,8 +82,8 @@ export default function Navigation() {
               />
             </div>
             <div className="flex flex-col">
-              <span className="text-lg md:text-xl font-black tracking-tighter text-gold">الزعيم الدولي</span>
-              <span className="text-[10px] md:text-xs font-medium text-gold/80">لكماليات السيارات</span>
+              <span className="text-lg md:text-xl font-black text-gold whitespace-nowrap">الزعيم الدولي</span>
+              <span className="text-[10px] md:text-xs font-medium text-gold/80 whitespace-nowrap">لكماليات السيارات</span>
             </div>
           </motion.a>
 
