@@ -145,7 +145,7 @@ export default function Footer() {
             </p>
             <p className="text-gray-300 flex items-center gap-2 text-lg">
               <span className="text-gold">🧾</span>
-              <span className="font-medium">الرقم الضريبي: 271-810-343</span>
+              <span className="font-medium">الرقم الضريبي: <span dir="ltr">271-810-343</span></span>
             </p>
             <p className="text-gray-300 flex items-center gap-2">
               <span className="text-gold">📍</span>
@@ -167,7 +167,18 @@ export default function Footer() {
           © {new Date().getFullYear()} مركز الزعيم الدولي لكماليات السيارات. جميع الحقوق محفوظة.
         </p>
         <p className="mt-2 text-gray-500 text-xs">
-          الرقم الضريبي: 271-810-343 | البريد الإلكتروني: admin@skywaveads.com
+          الرقم الضريبي: <span dir="ltr">271-810-343</span> | البريد الإلكتروني: admin@skywaveads.com
+        </p>
+        <p className="mt-2 text-gray-500 text-xs">
+          تم التصميم بكل ❤️ بواسطة{" "}
+          <a
+            href="https://www.skywaveads.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gold hover:text-gold-light transition-colors font-semibold"
+          >
+            Sky Wave
+          </a>
         </p>
       </motion.div>
     </footer>

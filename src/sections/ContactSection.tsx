@@ -212,6 +212,7 @@ export default function ContactSection() {
                     link: null,
                     color: "text-gold",
                     isTax: true,
+                    isLtr: true,
                   },
                 ].map((item, index) => (
                   <motion.div
@@ -232,7 +233,7 @@ export default function ContactSection() {
                     <div>
                       <p className="text-white font-bold mb-1">{item.title}</p>
                       {item.isTax ? (
-                        <p className="text-gold font-bold text-lg">{item.content}</p>
+                        <p className="text-gold font-bold text-lg" dir="ltr">{item.content}</p>
                       ) : item.link ? (
                         <a
                           href={item.link}

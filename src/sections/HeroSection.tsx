@@ -112,7 +112,7 @@ export default function HeroSection() {
         >
           <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full glass border border-gold/30 text-gold text-sm font-medium">
             <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-            الرقم الضريبي: 271-810-343
+            الرقم الضريبي: <span dir="ltr">271-810-343</span>
           </span>
         </motion.div>
 

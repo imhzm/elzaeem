@@ -89,7 +89,7 @@ export default function PortfolioSection() {
                 role="button"
                 tabIndex={0}
                 aria-label={`عرض صورة: ${item.titleAr}`}
-                onKeyPress={(e) => e.key === "Enter" && openLightbox(index)}
+                onKeyDown={(e) => e.key === "Enter" && openLightbox(index)}
               >
                 {/* Image */}
                 <div className="h-72 md:h-80 overflow-hidden">
