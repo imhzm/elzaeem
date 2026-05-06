@@ -75,8 +75,8 @@ export default function HeroSection() {
               src={currentSlide.url}
               alt={currentSlide.alt}
               fill
-              priority
-              quality={90}
+              priority={currentImage === 0}
+              quality={75}
               sizes="100vw"
               className="object-cover"
             />

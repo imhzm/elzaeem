@@ -9,7 +9,7 @@ export interface ImageMetadata {
 
 export const heroImages: ImageMetadata[] = [
   {
-    url: "/images/hero-1.png",
+    url: "/images/hero-1.jpg",
     width: 1920,
     height: 1080,
     alt: "سيارة فاخرة في صالة عرض احترافية مع إضاءة ذهبية - مركز الزعيم الدولي لكماليات السيارات",
@@ -17,7 +17,7 @@ export const heroImages: ImageMetadata[] = [
     subtitle: "خبرة واحترافية في عالم كماليات السيارات",
   },
   {
-    url: "/images/hero-2.png",
+    url: "/images/hero-2.jpg",
     width: 1920,
     height: 1080,
     alt: "تركيب شاشة أندرويد وإضاءة LED داخلية للسيارة - مركز الزعيم الدولي لكماليات السيارات",
@@ -25,7 +25,7 @@ export const heroImages: ImageMetadata[] = [
     subtitle: "أحدث التقنيات لتطوير سيارتك بأعلى جودة",
   },
   {
-    url: "/images/hero-3.png",
+    url: "/images/hero-3.jpg",
     width: 1920,
     height: 1080,
     alt: "واجهات كلادينج احترافية لمحلات تجارية - مركز الزعيم الدولي لكماليات السيارات",
@@ -33,7 +33,7 @@ export const heroImages: ImageMetadata[] = [
     subtitle: "تصميم وتنفيذ واجهات احترافية للمحلات والشركات",
   },
   {
-    url: "/images/hero-4.png",
+    url: "/images/hero-4.jpg",
     width: 1920,
     height: 1080,
     alt: "أفلام حماية PPF للسيارات - مركز الزعيم الدولي لكماليات السيارات",
@@ -41,7 +41,7 @@ export const heroImages: ImageMetadata[] = [
     subtitle: "حماية كاملة لسيارتك مع أجود أنواع أفلام الحماية",
   },
   {
-    url: "/images/hero-5.png",
+    url: "/images/hero-5.jpg",
     width: 1920,
     height: 1080,
     alt: "طباعة بانرات ودعاية وإعلان - مركز الزعيم الدولي لكماليات السيارات",

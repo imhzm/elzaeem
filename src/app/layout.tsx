@@ -179,6 +179,11 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
+        <link rel="preload" as="image" href="/images/hero-1.jpg" />
+        <link rel="preload" as="image" href="/images/hero-2.jpg" />
+        <link rel="preload" as="image" href="/images/hero-3.jpg" />
+        <link rel="preload" as="image" href="/images/hero-4.jpg" />
+        <link rel="preload" as="image" href="/images/hero-5.jpg" />
       </head>
       <body className="min-h-full flex flex-col bg-transparent text-foreground overflow-x-hidden">
         <BackgroundAnimations />
