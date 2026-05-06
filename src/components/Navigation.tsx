@@ -113,15 +113,10 @@ export default function Navigation() {
                 <span className="text-sm">واتساب</span>
               </a>
             </div>
-            <a href="https://maps.google.com" target="_blank" className="flex items-center gap-2 hover:text-gold transition-colors">
+            <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-gold transition-colors">
               <FaMapMarkerAlt size={16} />
               <span className="text-sm">العنوان</span>
             </a>
-            <span className="flex items-center gap-2 text-sm font-bold text-gold/90">
-              <span>🧾</span>
-              <span>الرقم الضريبي:</span>
-              <span dir="ltr" className="tracking-wide">271-810-343</span>
-            </span>
           </div>
 
           {/* WhatsApp CTA Button */}
@@ -216,13 +211,6 @@ export default function Navigation() {
               >
                 <span className="text-2xl">العروض</span>
               </a>
-              <div className="mt-4 pt-4 border-t border-gold/10">
-                <span className="flex items-center gap-2 text-base font-bold text-gold/90 py-3">
-                  <span>🧾</span>
-                  <span>الرقم الضريبي:</span>
-                  <span dir="ltr" className="tracking-wide">271-810-343</span>
-                </span>
-              </div>
               <div className="mt-8 pt-6 border-t border-gold/10">
                 <Button
                   variant="whatsapp"

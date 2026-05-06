@@ -103,17 +103,28 @@ export default function HeroSection() {
 
       {/* Hero Content */}
       <div className="relative z-20 max-w-7xl mx-auto px-6 text-center">
-        {/* Badge */}
+        {/* Badge & Info */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="mb-6"
+          className="mb-6 flex flex-col items-center gap-3"
         >
           <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full glass border border-gold/30 text-gold text-sm font-medium">
             <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-            الرقم الضريبي: <span dir="ltr">271-810-343</span>
+            🧾 الرقم الضريبي: <span dir="ltr">271-810-343</span>
           </span>
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 text-gray-300 text-sm md:text-base">
+            <span className="flex items-center gap-2">
+              <span className="text-gold">📍</span>
+              <span>١ شارع محمد السراج من شارع الفيوم، دار السلام، القاهرة</span>
+            </span>
+            <span className="hidden md:block w-px h-4 bg-gold/30" />
+            <a href="tel:+201067894321" className="flex items-center gap-2 hover:text-gold transition-colors">
+              <span className="text-gold">📞</span>
+              <span dir="ltr">01067894321</span>
+            </a>
+          </div>
         </motion.div>
 
         {/* Animated Title with slide content */}
