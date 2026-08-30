@@ -15,22 +15,18 @@ export default function ScrollProgress() {
       setProgress(progress);
     };
 
-    window.addEventListener("scroll", updateProgress, { passive: true });
+    window.addEventListener("scroll", updateProgress);
     return () => window.removeEventListener("scroll", updateProgress);
   }, []);
 
   return (
     <motion.div
-      className="fixed top-0 left-0 right-0 z-[60] h-1 bg-dark-card/50 backdrop-blur-sm"
+      className="fixed top-0 left-0 right-0 z-[60] h-1 bg-gold/20"
       style={{ transformOrigin: "0%" }}
     >
       <motion.div
-        className="h-full relative"
-        style={{
-          width: `${progress}%`,
-          background: "linear-gradient(90deg, #D4AF37, #FFD700, #D4AF37)",
-          boxShadow: "0 0 10px rgba(212, 175, 55, 0.6), 0 0 20px rgba(212, 175, 55, 0.3)",
-        }}
+        className="h-full bg-gold"
+        style={{ width: `${progress}%` }}
         transition={{ duration: 0.1 }}
       />
     </motion.div>

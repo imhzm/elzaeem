@@ -9,7 +9,7 @@ export default function Preloader() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 500);
+    }, 2000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -27,9 +27,7 @@ export default function Preloader() {
               animate={{ scale: 1 }}
               transition={{ type: "spring", stiffness: 260, damping: 20 }}
             >
-              <h1 className="text-5xl font-bold text-gold mb-4">
-                ELZAEEM
-              </h1>
+              <img src="/logo.png" alt="ELITE SHIELD" className="h-24 w-auto mx-auto mb-4" />
             </motion.div>
             <motion.div
               className="w-48 h-1 bg-gold mx-auto overflow-hidden"
@@ -37,14 +35,6 @@ export default function Preloader() {
               animate={{ scaleX: 1 }}
               transition={{ duration: 1.5, ease: "easeInOut" }}
             />
-            <motion.p
-              className="text-gray-300 mt-4"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-            >
-              INTERNATIONAL
-            </motion.p>
           </div>
         </motion.div>
       )}

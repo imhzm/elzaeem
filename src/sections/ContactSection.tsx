@@ -6,7 +6,7 @@ import SectionHeader from "@/components/SectionHeader";
 import Button from "@/components/Button";
 import { allServices } from "@/data/services";
 import { getWhatsAppLink } from "@/lib/utils";
-import { FaWhatsapp, FaPhone, FaMapMarkerAlt, FaClock, FaEnvelope } from "react-icons/fa";
+import { FaWhatsapp, FaPhone, FaMapMarkerAlt, FaClock } from "react-icons/fa";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -18,275 +18,159 @@ export default function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const message = `مرحبًا، أنا ${formData.name}، رقم هاتفي ${formData.phone}. أريد طلب ${formData.service ? `خدمة ${formData.service}` : "خدمة"} من مركز الزعيم الدولي لكماليات السيارات. التفاصيل: ${formData.details}`;
+    const message = `مرحبًا، أنا ${formData.name}، رقم هاتفي ${formData.phone}. أريد طلب ${formData.service ? `خدمة ${formData.service}` : "خدمة"}. التفاصيل: ${formData.details}`;
     window.open(getWhatsAppLink("201067894321", message), "_blank");
   };
 
   return (
-    <section id="contact-form" className="py-24 px-4 bg-dark-bg relative overflow-hidden">
-      {/* Decorative mesh gradients */}
-      <div className="absolute top-40 right-20 w-80 h-80 bg-gold/5 rounded-full blur-3xl hidden lg:block" />
-      <div className="absolute bottom-40 left-20 w-96 h-96 bg-accent-red/5 rounded-full blur-3xl hidden lg:block" />
-
-      <div className="max-w-7xl mx-auto relative z-10">
+    <section id="contact-form" className="py-20 px-4 bg-dark-bg">
+      <div className="max-w-7xl mx-auto">
         <SectionHeader
           titleAr="تواصل معنا"
           subtitleAr="نحن هنا للإجابة على استفساراتك وتنفيذ طلبك بأسرع وقت"
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.5 }}
           >
-            <div className="glass-card p-8 rounded-2xl border-gold/10">
-              <h3 className="text-2xl font-bold text-gold mb-8 flex items-center gap-3">
-                <span className="w-10 h-10 bg-gold/10 rounded-xl flex items-center justify-center border border-gold/20">
-                  📝
-                </span>
-                طلب عرض سعر
-              </h3>
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.1 }}
-                >
-                  <label className="block text-gray-300 mb-2 font-medium">الاسم</label>
-                  <input
-                    type="text"
-                    required
-                    className="w-full bg-dark-bg/80 border border-gold/30 rounded-xl px-5 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all"
-                    value={formData.name}
-                    onChange={(e) =>
-                      setFormData({ ...formData, name: e.target.value })
-                    }
-                    placeholder="أدخل اسمك"
-                  />
-                </motion.div>
+            <h3 className="text-2xl font-bold text-gold mb-6">طلب عرض سعر</h3>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <label className="block text-gray-300 mb-2">الاسم</label>
+                <input
+                  type="text"
+                  required
+                  className="w-full bg-dark-gray border border-gold/30 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold"
+                  value={formData.name}
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
+                />
+              </div>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2 }}
-                >
-                  <label className="block text-gray-300 mb-2 font-medium">رقم الهاتف</label>
-                  <input
-                    type="tel"
-                    required
-                    className="w-full bg-dark-bg/80 border border-gold/30 rounded-xl px-5 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all"
-                    value={formData.phone}
-                    onChange={(e) =>
-                      setFormData({ ...formData, phone: e.target.value })
-                    }
-                    placeholder="أدخل رقم هاتفك"
-                  />
-                </motion.div>
+              <div>
+                <label className="block text-gray-300 mb-2">رقم الهاتف</label>
+                <input
+                  type="tel"
+                  required
+                  className="w-full bg-dark-gray border border-gold/30 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold"
+                  value={formData.phone}
+                  onChange={(e) =>
+                    setFormData({ ...formData, phone: e.target.value })
+                  }
+                />
+              </div>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.3 }}
+              <div>
+                <label className="block text-gray-300 mb-2">نوع الخدمة</label>
+                <select
+                  required
+                  className="w-full bg-dark-gray border border-gold/30 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold"
+                  value={formData.service}
+                  onChange={(e) =>
+                    setFormData({ ...formData, service: e.target.value })
+                  }
                 >
-                  <label className="block text-gray-300 mb-2 font-medium">نوع الخدمة</label>
-                  <select
-                    required
-                    className="w-full bg-dark-bg/80 border border-gold/30 rounded-xl px-5 py-3 text-white focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all"
-                    value={formData.service}
-                    onChange={(e) =>
-                      setFormData({ ...formData, service: e.target.value })
-                    }
-                  >
-                    <option value="">إختر الخدمة</option>
-                    {allServices.map((service) => (
-                      <option key={service.id} value={service.titleAr}>
-                        {service.titleAr}
-                      </option>
-                    ))}
-                    <option value="خدمة أخرى">خدمة أخرى</option>
-                  </select>
-                </motion.div>
+                  <option value="">اختر الخدمة</option>
+                  {allServices.map((service) => (
+                    <option key={service.id} value={service.titleAr}>
+                      {service.titleAr}
+                    </option>
+                  ))}
+                  <option value="خدمة أخرى">خدمة أخرى</option>
+                </select>
+              </div>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.4 }}
-                >
-                  <label className="block text-gray-300 mb-2 font-medium">تفاصيل الطلب</label>
-                  <textarea
-                    rows={4}
-                    className="w-full bg-dark-bg/80 border border-gold/30 rounded-xl px-5 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all resize-none"
-                    value={formData.details}
-                    onChange={(e) =>
-                      setFormData({ ...formData, details: e.target.value })
-                    }
-                    placeholder="اكتب تفاصيل طلبك هنا..."
-                  />
-                </motion.div>
+              <div>
+                <label className="block text-gray-300 mb-2">تفاصيل الطلب</label>
+                <textarea
+                  rows={4}
+                  className="w-full bg-dark-gray border border-gold/30 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold"
+                  value={formData.details}
+                  onChange={(e) =>
+                    setFormData({ ...formData, details: e.target.value })
+                  }
+                />
+              </div>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.5 }}
-                >
-                  <Button
-                    type="submit"
-                    variant="primary"
-                    size="lg"
-                    className="w-full text-lg py-4 shadow-xl shadow-gold/30 btn-gold-glow"
-                  >
-                    <span className="flex items-center justify-center gap-2">
-                      إرسال على واتساب
-                      <span className="text-2xl">→</span>
-                    </span>
-                  </Button>
-                </motion.div>
-              </form>
-            </div>
+              <Button type="submit" variant="primary" size="lg" className="w-full">
+                إرسال على واتساب
+              </Button>
+            </form>
           </motion.div>
 
           {/* Contact Info */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="space-y-8"
+            transition={{ duration: 0.5 }}
           >
-            <div className="glass-card p-8 rounded-2xl border-gold/10">
-              <h3 className="text-2xl font-bold text-gold mb-8 flex items-center gap-3">
-                <span className="w-10 h-10 bg-gold/10 rounded-xl flex items-center justify-center border border-gold/20">
-                  📞
-                </span>
-                معلومات التواصل
-              </h3>
-              <div className="space-y-6">
-                {[
-                  {
-                    icon: FaPhone,
-                    title: "رقم الهاتف",
-                    content: "+201067894321",
-                    link: "tel:+201067894321",
-                    color: "text-gold",
-                  },
-                  {
-                    icon: FaWhatsapp,
-                    title: "واتساب",
-                    content: "01067894321",
-                    link: "https://wa.me/201067894321",
-                    color: "text-[#25D366]",
-                  },
-                  {
-                    icon: FaEnvelope,
-                    title: "البريد الإلكتروني",
-                    content: "admin@skywaveads.com",
-                    link: "mailto:admin@skywaveads.com",
-                    color: "text-gold",
-                  },
-                  {
-                    icon: FaMapMarkerAlt,
-                    title: "العنوان",
-                    content: "١ شارع محمد السراج من شارع الفيوم، دار السلام، محافظة القاهرة، ١١٧١٦",
-                    link: null,
-                    color: "text-red-500",
-                  },
-                  {
-                    icon: FaClock,
-                    title: "مواعيد العمل",
-                    content: "السبت - الخميس: 9 ص - 9 م | الجمعة: مغلق",
-                    link: null,
-                    color: "text-gold",
-                  },
-                  {
-                    icon: FaWhatsapp,
-                    title: "الرقم الضريبي",
-                    content: "271-810-343",
-                    link: null,
-                    color: "text-gold",
-                    isTax: true,
-                    isLtr: true,
-                  },
-                ].map((item, index) => (
-                  <motion.div
-                    key={index}
-                    className="flex items-start gap-4 group"
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.15 }}
+            <h3 className="text-2xl font-bold text-gold mb-6">معلومات التواصل</h3>
+            <div className="space-y-6">
+              <div className="flex items-center gap-4">
+                <FaPhone size={24} className="text-gold" />
+                <div>
+                  <p className="text-white font-bold">رقم الهاتف</p>
+                  <a
+                    href="tel:+201067894321"
+                    className="text-gray-300 hover:text-gold"
                   >
-                    <div className={`w-12 h-12 bg-dark-bg/80 border border-gold/20 rounded-xl flex items-center justify-center group-hover:border-gold/50 transition-colors`}>
-                      {item.isTax ? (
-                        <span className="text-xl">🧾</span>
-                      ) : (
-                        <item.icon size={20} className={item.color} />
-                      )}
-                    </div>
-                    <div>
-                      <p className="text-white font-bold mb-1">{item.title}</p>
-                      {item.isTax ? (
-                        <p className="text-gold font-bold text-lg" dir="ltr">{item.content}</p>
-                      ) : item.link ? (
-                        <a
-                          href={item.link}
-                          className="text-gray-300 hover:text-gold transition-colors"
-                        >
-                          {item.content}
-                        </a>
-                      ) : (
-                        <p className="text-gray-300">{item.content}</p>
-                      )}
-                    </div>
-                  </motion.div>
-                ))}
+                    +201067894321
+                  </a>
+                </div>
               </div>
-            </div>
 
-            {/* WhatsApp CTA */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-            >
+              <div className="flex items-start gap-4">
+                <FaMapMarkerAlt size={24} className="text-gold mt-1" />
+                <div>
+                  <p className="text-white font-bold">العنوان</p>
+                  <p className="text-gray-300">
+                    در السلام، شارع الفيوم، القاهرة، مصر
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <FaClock size={24} className="text-gold" />
+                <div>
+                  <p className="text-white font-bold">مواعيد العمل</p>
+                  <p className="text-gray-300">
+                    السبت - الخميس: 9 ص - 9 م
+                  </p>
+                  <p className="text-gray-300">الجمعة: مغلق</p>
+                </div>
+              </div>
+
               <Button
                 variant="whatsapp"
                 size="lg"
                 whatsapp
-                whatsappMessage="مرحبًا، أريد التواصل مع مركز الزعيم الدولي لكماليات السيارات"
-                className="w-full justify-center text-lg py-4 shadow-xl shadow-[#25D366]/30"
+                whatsappMessage="مرحبًا، أريد التواصل مع إيليت شيلد"
+                className="w-full justify-center"
               >
                 تواصل واتساب مباشر
               </Button>
-            </motion.div>
 
-            {/* Google Maps Embed */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.6 }}
-              className="h-64 rounded-2xl overflow-hidden border border-gold/20"
-            >
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.864244567722!2d31.281203!3d29.961994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1sen!2seg!4v1714646400000!5m2!1sen!2seg"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="موقع مركز الزعيم الدولي"
-              />
-            </motion.div>
+              {/* Google Maps Embed */}
+              <div className="h-64 rounded-xl overflow-hidden border border-gold/20">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.864244567722!2d31.281203!3d29.961994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1sDar%20El%20Salam%2C%20Al%20Fayoum%20Street%2C%20Cairo!2sDar+El+Salam%2C+Cairo+Governorate!5e0!3m2!1sen!2seg!4v1714646400000!5m2!1sen!2seg"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="موقع إيليت شيلد"
+                />
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>

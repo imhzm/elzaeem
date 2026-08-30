@@ -7,7 +7,7 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 const faqs = [
   {
-    question: "ما هي مواعيد عمل مركز الزعيم الدولي؟",
+    question: "ما هي مواعيد عمل إيليت شيلد؟",
     answer: "نعمل من السبت إلى الخميس من الساعة 9 صباحاً حتى 9 مساءً. الجمعة إجازة.",
   },
   {
@@ -36,11 +36,8 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="py-24 px-4 bg-dark-gray relative overflow-hidden">
-      {/* Decorative gradient */}
-      <div className="absolute top-1/2 left-0 w-80 h-80 bg-gold/3 rounded-full blur-3xl" />
-
-      <div className="max-w-4xl mx-auto relative z-10">
+    <section className="py-20 px-4 bg-dark-gray">
+      <div className="max-w-4xl mx-auto">
         <SectionHeader
           titleAr="أسئلة شائعة"
           subtitleAr="إجابات على أكثر الأسئلة شيوعاً حول خدماتنا"
@@ -50,26 +47,24 @@ export default function FAQSection() {
           {faqs.map((faq, index) => (
             <motion.div
               key={index}
-              className="glass-card rounded-2xl border-gold/10 overflow-hidden"
+              className="bg-dark-bg rounded-xl border border-gold/20 overflow-hidden"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <button
-                className="w-full px-6 py-5 text-right flex items-center justify-between hover:bg-gold/5 transition-colors group"
+                className="w-full px-6 py-4 text-right flex items-center justify-between hover:bg-medium-gray/50 transition-colors"
                 onClick={() => toggle(index)}
               >
-                <span className="text-lg font-semibold text-white group-hover:text-gold transition-colors">
+                <span className="text-lg font-semibold text-white">
                   {faq.question}
                 </span>
-                <motion.div
-                  animate={{ rotate: openIndex === index ? 180 : 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="text-gold shrink-0 ml-4"
-                >
-                  <FaChevronDown size={18} />
-                </motion.div>
+                {openIndex === index ? (
+                  <FaChevronUp className="text-gold" />
+                ) : (
+                  <FaChevronDown className="text-gold" />
+                )}
               </button>
               <AnimatePresence>
                 {openIndex === index && (
@@ -80,8 +75,8 @@ export default function FAQSection() {
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <div className="px-6 pb-5 text-gray-300 leading-relaxed border-t border-gold/10">
-                      <p className="pt-4">{faq.answer}</p>
+                    <div className="px-6 pb-4 text-gray-300 leading-relaxed">
+                      {faq.answer}
                     </div>
                   </motion.div>
                 )}
