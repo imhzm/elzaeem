@@ -10,69 +10,63 @@ export interface Service {
 
 export const automotiveServices: Service[] = [
   {
-    id: "car-screens",
-    titleAr: "شاشات سيارات",
-    titleEn: "Car Screens",
-    descriptionAr:
-      "شاشات أندرويد، Apple CarPlay، Bluetooth، GPS، دعم كاميرات، وتجربة قيادة أذكى لسيارتك.",
-    icon: "MdScreenShare",
-    image:
-      "https://images.unsplash.com/photo-1553440569-bcc63803a83d?w=800&q=80",
-    category: "automotive",
-  },
-  {
-    id: "led-lights",
-    titleAr: "ليدات سيارات",
-    titleEn: "LED Lights",
-    descriptionAr:
-      "إضاءة أقوى، رؤية أوضح، مظهر أحدث، وتركيب مناسب لموديلات مختلفة من السيارات.",
-    icon: "MdLightbulb",
-    image:
-      "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80",
-    category: "automotive",
-  },
-  {
     id: "protection-films",
-    titleAr: "أفلام حماية السيارات",
-    titleEn: "Protection Films",
+    titleAr: "أفلام حماية السيارات PPF",
+    titleEn: "PPF Protection Films",
     descriptionAr:
-      "حماية للبوية من الخدوش، التراب، الشمس، وآثار الاستخدام اليومي لسيارتك.",
+      "أفلام حماية أصلية بتقنية المعالجة الذاتية لحماية البوية من الخدوش والترميل والشمس وعوامل الجو.",
     icon: "MdShield",
-    image:
-      "https://images.pexels.com/photos/36021355/pexels-photo-36021355.jpeg?auto=compress&w=800&q=80",
+    image: "/images/hero-4.jpg",
     category: "automotive",
   },
   {
     id: "car-tint",
-    titleAr: "فاميه سيارات",
-    titleEn: "Car Tint",
+    titleAr: "عزل حراري وفاميه متطور",
+    titleEn: "Thermal Insulation & Tint",
     descriptionAr:
-      "خصوصية، تقليل حرارة، مظهر أنيق، وتحسين تجربة القيادة مع أفلام فاميه عالية الجودة.",
+      "أفلام نانو كربوني وسيراميك تعزل 99% من الأشعة فوق البنفسجية وتوفر خصوصية وتبريد فائق للمقصورة.",
     icon: "MdOpacity",
-    image:
-      "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=800&q=80",
+    image: "/images/hero-1.jpg",
     category: "automotive",
   },
   {
-    id: "sound-systems",
-    titleAr: "أنظمة صوتية",
-    titleEn: "Sound Systems",
+    id: "car-screens",
+    titleAr: "شاشات سيارات ذكية",
+    titleEn: "Smart Car Screens",
     descriptionAr:
-      "سماعات، صب، جي إم، وتجهيزات صوت بجودة مناسبة لتجربة صوتية متميزة في سيارتك.",
-    icon: "MdSpeaker",
-    image:
-      "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=800&q=80",
+      "شاشات أندرويد فائقة الوضوح تدعم Apple CarPlay وAndroid Auto ونظام الملاحة GPS وكاميرات 360.",
+    icon: "MdScreenShare",
+    image: "/images/hero-2.jpg",
+    category: "automotive",
+  },
+  {
+    id: "led-lights",
+    titleAr: "إضاءات وليدات سيارات",
+    titleEn: "LED Automotive Lighting",
+    descriptionAr:
+      "ليدات أمامية وإضاءات داخلية محيطية Ambient Light بأعلى كفاءة ضوئية وعمر افتراضي طويل.",
+    icon: "MdLightbulb",
+    image: "/images/hero-2.jpg",
     category: "automotive",
   },
   {
     id: "car-upholstery",
-    titleAr: "فرش سيارات",
-    titleEn: "Car Upholstery",
+    titleAr: "فرش وتجهيز مقصورة السيارات",
+    titleEn: "Car Upholstery & Interior",
     descriptionAr:
-      "فرش جلد، تفصيل، حماية داخلية، وتنسيق حسب شكل العربية لراحة وجمال الداخلية.",
+      "فرش جلد طبيعي وصناعي فاخر، تفصيل دقيق وحماية متكاملة للأرضيات والكراسي بأحدث التصاميم.",
     icon: "MdAirlineSeatReclineNormal",
-    image:
-      "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?w=800&q=80",
+    image: "/images/2.jpg",
+    category: "automotive",
+  },
+  {
+    id: "sound-systems",
+    titleAr: "أنظمة صوتية احترافية",
+    titleEn: "Professional Sound Systems",
+    descriptionAr:
+      "سماعات ومضخمات صوت Subwoofer وAmplifiers نقية لتجربة سمعية استثنائية داخل السيارة.",
+    icon: "MdSpeaker",
+    image: "/images/1.jpg",
     category: "automotive",
   },
 ];
@@ -80,57 +74,52 @@ export const automotiveServices: Service[] = [
 export const printingServices: Service[] = [
   {
     id: "cladding-facades",
-    titleAr: "واجهات كلادينج",
+    titleAr: "واجهات كلادينج وحروف بارزة",
     titleEn: "Cladding Facades",
     descriptionAr:
-      "تصميم وتنفيذ واجهات للمحلات، الشركات، المولات، والمعارض بخامات مقاومة ومظهر عصري.",
+      "تصميم وتنفيذ واجهات كلادينج مقاومة للعوامل الجوية للمحلات والشركات مع إضاءة ليد احترافية.",
     icon: "MdBusiness",
-    image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
+    image: "/images/hero-3.jpg",
     category: "printing",
   },
   {
     id: "tinted-frosted-glass",
-    titleAr: "زجاج فاميه ومسنفر",
+    titleAr: "زجاج فاميه ومسنفر للمباني",
     titleEn: "Tinted & Frosted Glass",
     descriptionAr:
-      "حلول زجاج للمكاتب والشركات والمدارس تعطي خصوصية ومظهر منظم لبيئة العمل.",
+      "حلول عزل وفاميه وتسنفير زجاجي للشركات والمكاتب يمنح الخصوصية والشكل الجمالي العصري.",
     icon: "MdBlurOn",
-    image:
-      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
+    image: "/images/3.jpg",
     category: "printing",
   },
   {
     id: "facade-stickers",
-    titleAr: "استيكرات واجهات",
-    titleEn: "Facade Stickers",
+    titleAr: "استيكرات واجهات وفينيل",
+    titleEn: "Facade Stickers & Vinyl",
     descriptionAr:
-      "لوجوهات، عروض، تغطية زجاج كاملة أو جزئية، وقص احترافي لواجهات المحلات والشركات.",
+      "طباعة وقص استيكرات فينيل عالية الدقة لمقرات الشركات والواجهات الزجاجية والمعارض.",
     icon: "MdLabel",
-    image:
-      "https://images.pexels.com/photos/28726705/pexels-photo-28726705.jpeg?auto=compress&w=800&q=80",
+    image: "/images/4.jpg",
     category: "printing",
   },
   {
     id: "banners-rollups",
-    titleAr: "بنرات ورول أب",
+    titleAr: "بنرات ورول أب معارض",
     titleEn: "Banners & Roll-ups",
     descriptionAr:
-      "تصميم وطباعة للمعارض، الشركات، المولات، والحملات الترويجية بجودة عالية وألوان زاهية.",
+      "تصميم وطباعة بنرات ومجسمات رول أب إعلانية بجودة ألوان استثنائية للمؤتمرات والفعاليات.",
     icon: "MdPhotoSizeSelectLarge",
-    image:
-      "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80",
+    image: "/images/hero-5.jpg",
     category: "printing",
   },
   {
     id: "indoor-outdoor-signs",
-    titleAr: "لوحات داخلية وخارجية",
+    titleAr: "لوحات إرشادية ودعائية",
     titleEn: "Indoor & Outdoor Signs",
     descriptionAr:
-      "لوحات إرشادية، لوحات محلات، لوحات شركات، ولافتات دعائية بتصاميم جذابة ومتينة.",
+      "تصنيع لوحات إرشادية وتجارية متينة بخامات أكرليك واستانلس وإضاءات نيون وليد.",
     icon: "MdSignpost",
-    image:
-      "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=800&q=80",
+    image: "/images/5.jpg",
     category: "printing",
   },
   {
@@ -138,10 +127,9 @@ export const printingServices: Service[] = [
     titleAr: "بوسترات ومواد دعائية",
     titleEn: "Posters & Promo Materials",
     descriptionAr:
-      "طباعة مواد تسويقية للبراندات والمناسبات والعروض بأحدث تكنولوجيا الطباعة.",
+      "طباعة مواد تسويقية وتوزيعات دعائية بأحدث مكائن الطباعة الرقمية وسرعة تسليم قياسية.",
     icon: "MdPrint",
-    image:
-      "https://images.pexels.com/photos/35066322/pexels-photo-35066322.jpeg?auto=compress&w=800&q=80",
+    image: "/images/6.jpg",
     category: "printing",
   },
 ];

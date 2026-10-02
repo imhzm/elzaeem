@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 import SectionHeader from "@/components/SectionHeader";
 import Button from "@/components/Button";
 import { allServices } from "@/data/services";
@@ -32,12 +31,7 @@ export default function ContactSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
+          <div>
             <h3 className="text-2xl font-bold text-gold mb-6">طلب عرض سعر</h3>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
@@ -102,15 +96,10 @@ export default function ContactSection() {
                 إرسال على واتساب
               </Button>
             </form>
-          </motion.div>
+          </div>
 
           {/* Contact Info */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
+          <div>
             <h3 className="text-2xl font-bold text-gold mb-6">معلومات التواصل</h3>
             <div className="space-y-6">
               <div className="flex items-center gap-4">
@@ -131,7 +120,7 @@ export default function ContactSection() {
                 <div>
                   <p className="text-white font-bold">العنوان</p>
                   <p className="text-gray-300">
-                    در السلام، شارع الفيوم، القاهرة، مصر
+                    دار السلام، شارع الفيوم، القاهرة، مصر
                   </p>
                 </div>
               </div>
@@ -171,7 +160,7 @@ export default function ContactSection() {
                 />
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

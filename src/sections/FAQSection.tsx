@@ -45,13 +45,9 @@ export default function FAQSection() {
 
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <motion.div
+            <div
               key={index}
-              className="bg-dark-bg rounded-xl border border-gold/20 overflow-hidden"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-dark-bg rounded-xl border border-gold/20 overflow-hidden hover:border-gold/40 transition-colors"
             >
               <button
                 className="w-full px-6 py-4 text-right flex items-center justify-between hover:bg-medium-gray/50 transition-colors"
@@ -81,7 +77,7 @@ export default function FAQSection() {
                   </motion.div>
                 )}
               </AnimatePresence>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
