@@ -1,116 +1,77 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import Button from "@/components/Button";
-import MeshGradient from "@/components/MeshGradient";
-
-const images = [
-  "https://images.unsplash.com/photo-1553440569-bcc63803a83d?w=1920&q=80",
-  "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80",
-  "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=1920&q=80",
-  "https://images.unsplash.com/photo-1607082349566-187342175e2f?w=1920&q=80",
-];
 
 export default function HeroSection() {
-  const [currentImage, setCurrentImage] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated background images */}
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-dark-bg py-20 px-4">
+      {/* Background with real automotive protection visual & luxury gradient vignette */}
       <div className="absolute inset-0 z-0">
-        <MeshGradient />
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentImage}
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${images[currentImage]})` }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1 }}
-          />
-        </AnimatePresence>
-        <div className="absolute inset-0 bg-dark-bg/70" />
+        <div
+          className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 scale-105"
+          style={{ backgroundImage: `url('/images/hero-1.png')` }}
+        />
+        {/* Multilayer gradient: ensure high contrast and immediate visual clarity on desktop and mobile */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0f0f14]/90 via-[#0f0f14]/65 to-[#0f0f14]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.08)_0%,transparent_70%)]" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <motion.h1
-          className="text-4xl md:text-6xl font-bold text-gold mb-6"
-          initial={{ y: 50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8 }}
-        >
-          ELITE SHIELD
-        </motion.h1>
+      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto flex flex-col items-center">
+        {/* Top Trust Badge */}
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/15 border border-gold/40 text-gold text-xs sm:text-sm font-semibold mb-6 backdrop-blur-md shadow-lg shadow-gold/5">
+          <span className="text-base">🛡️</span>
+          <span>المركز المتخصص لحماية وتجهيز السيارات الفاخرة | ELITE SHIELD</span>
+        </div>
 
-        <motion.p
-          className="text-xl md:text-2xl text-white mb-4"
-          initial={{ y: 50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-           إيليت شيلد لكماليات السيارات
-        </motion.p>
+        {/* Main Automotive Headline */}
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight tracking-tight">
+          حماية متطورة ومظهر استثنائي لسيارتك مع{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold via-yellow-200 to-amber-500">
+            إيليت شيلد
+          </span>
+        </h1>
 
-        <motion.p
-          className="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto"
-          initial={{ y: 50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-        >
-          حلول متكاملة لكماليات السيارات والطباعة والدعاية والإعلان
-        </motion.p>
+        {/* Clear Service Proposition */}
+        <p className="text-base sm:text-lg lg:text-xl text-gray-200 mb-8 max-w-2xl mx-auto leading-relaxed font-normal">
+          أفلام حماية الطلاء PPF بتقنية المعالجة الذاتية، طلاء النانو سيراميك عالي الكثافة، العزل الحراري المتقدم، وتجهيزات كماليات ومقصورة السيارات بأعلى معايير الإتقان.
+        </p>
 
-        <motion.div
-          className="flex flex-wrap justify-center gap-4"
-          initial={{ y: 50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          <Button variant="primary" size="lg" href="#contact-form">
-            اطلب عرض سعر الآن
+        {/* Primary and WhatsApp CTAs */}
+        <div className="flex flex-wrap justify-center items-center gap-4 mb-10 w-full sm:w-auto">
+          <Button variant="primary" size="lg" href="#contact-form" className="shadow-lg shadow-gold/20 hover:shadow-gold/35">
+            اطلب عرض سعر فوري
           </Button>
           <Button
             variant="whatsapp"
             size="lg"
             whatsapp
-            whatsappMessage="مرحبًا، أريد الاستفسار عن خدمات إيليت شيلد"
+            whatsappMessage="مرحبًا إيليت شيلد، أود الاستفسار عن باقات حماية وتجهيز السيارات المتاحة لديكم"
           >
-            تواصل واتساب
+            تواصل واتساب مباشر
           </Button>
-        </motion.div>
-      </div>
+        </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-gold"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ repeat: Infinity, duration: 1.5 }}
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-8 w-8"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M19 14l-7 7m0 0l-7-7m7 7V3"
-          />
-        </svg>
-      </motion.div>
+        {/* 4 Feature Value Props */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 max-w-3xl w-full pt-4 border-t border-white/10 text-xs sm:text-sm text-gray-300">
+          <div className="flex items-center justify-center gap-2 py-2 px-3 rounded-lg bg-white/[0.04] border border-white/5">
+            <span className="text-gold font-bold text-base">🛡️</span>
+            <span className="font-medium">أفلام PPF معالجة ذاتياً</span>
+          </div>
+          <div className="flex items-center justify-center gap-2 py-2 px-3 rounded-lg bg-white/[0.04] border border-white/5">
+            <span className="text-gold font-bold text-base">💎</span>
+            <span className="font-medium">نانو سيراميك 9H فائق</span>
+          </div>
+          <div className="flex items-center justify-center gap-2 py-2 px-3 rounded-lg bg-white/[0.04] border border-white/5">
+            <span className="text-gold font-bold text-base">☀️</span>
+            <span className="font-medium">عزل حراري 99% UV</span>
+          </div>
+          <div className="flex items-center justify-center gap-2 py-2 px-3 rounded-lg bg-white/[0.04] border border-white/5">
+            <span className="text-gold font-bold text-base">📜</span>
+            <span className="font-medium">ضمان حقيقي معتمد</span>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
