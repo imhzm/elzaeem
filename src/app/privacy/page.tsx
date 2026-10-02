@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import { FaShieldAlt, FaCheckCircle } from "react-icons/fa";
 
 export const metadata: Metadata = {
-  title: "سياسة الخصوصية | ELITE SHIELD",
+  title: "سياسة الخصوصية",
   description: "سياسة الخصوصية لإيليت شيلد - كيف نجمع ونستخدم ونحمي بياناتك الشخصية",
 };
 

@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import { FaFileContract, FaCheckCircle } from "react-icons/fa";
 
 export const metadata: Metadata = {
-  title: "الشروط والأحكام | ELITE SHIELD",
+  title: "الشروط والأحكام",
   description: "الشروط والأحكام لاستخدام موقع وخدمات إيليت شيلد لكماليات السيارات",
 };
 

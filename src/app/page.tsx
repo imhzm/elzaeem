@@ -6,7 +6,6 @@ import ServicesSection from "@/sections/ServicesSection";
 import ProcessSection from "@/sections/ProcessSection";
 import PortfolioSection from "@/sections/PortfolioSection";
 import WhyEliteShieldSection from "@/sections/WhyEliteShieldSection";
-import TestimonialsSection from "@/sections/TestimonialsSection";
 import FAQSection from "@/sections/FAQSection";
 import OffersSection from "@/sections/OffersSection";
 import ContactSection from "@/sections/ContactSection";
@@ -31,7 +30,6 @@ export default function Home() {
           <PortfolioSection />
         </div>
         <WhyEliteShieldSection />
-        <TestimonialsSection />
         <FAQSection />
         <div id="offers" className="scroll-mt-20">
           <OffersSection />
