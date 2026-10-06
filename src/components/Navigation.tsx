@@ -6,12 +6,12 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import Button from "@/components/Button";
 
 const navLinks = [
-  { label: "الرئيسية", href: "#home" },
-  { label: "من نحن", href: "#about" },
-  { label: "خدماتنا", href: "#services" },
-  { label: "أعمالنا", href: "#portfolio" },
-  { label: "العروض", href: "#offers" },
-  { label: "تواصل معنا", href: "#contact-form" },
+  { label: "الرئيسية", href: "/#home" },
+  { label: "من نحن", href: "/#about" },
+  { label: "خدماتنا", href: "/#services" },
+  { label: "أعمالنا", href: "/#portfolio" },
+  { label: "العروض", href: "/#offers" },
+  { label: "تواصل معنا", href: "/#contact-form" },
 ];
 
 export default function Navigation() {
@@ -40,7 +40,7 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-2">
+          <a href="/" className="flex items-center gap-2">
             <img src="/logo.png" alt="ELITE SHIELD" className="h-14 w-auto" />
           </a>
 

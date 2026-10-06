@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { FaFileContract, FaCheckCircle } from "react-icons/fa";
 
@@ -57,7 +56,6 @@ const termsSections = [
 export default function TermsPage() {
   return (
     <main className="min-h-screen bg-dark-bg text-foreground">
-      <Navigation />
       <div className="pt-32 pb-20 px-4">
         <div className="max-w-4xl mx-auto">
           {/* Header */}

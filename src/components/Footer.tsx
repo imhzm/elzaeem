@@ -27,11 +27,11 @@ export default function Footer() {
           <h4 className="text-xl font-bold text-white mb-4">روابط سريعة</h4>
           <ul className="space-y-2">
             {[
-              { label: "الرئيسية", href: "#home" },
-              { label: "خدماتنا", href: "#services" },
-              { label: "أعمالنا", href: "#portfolio" },
-              { label: "العروض", href: "#offers" },
-              { label: "تواصل معنا", href: "#contact-form" },
+              { label: "الرئيسية", href: "/#home" },
+              { label: "خدماتنا", href: "/#services" },
+              { label: "أعمالنا", href: "/#portfolio" },
+              { label: "العروض", href: "/#offers" },
+              { label: "تواصل معنا", href: "/#contact-form" },
               { label: "الشروط والأحكام", href: "/terms" },
               { label: "سياسة الخصوصية", href: "/privacy" },
             ].map((link) => (
