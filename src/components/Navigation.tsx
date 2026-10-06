@@ -27,15 +27,12 @@ export default function Navigation() {
   }, []);
 
   return (
-    <motion.nav
+    <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? "bg-dark-bg/95 backdrop-blur-md shadow-lg shadow-black/20"
           : "bg-transparent"
       }`}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
     >
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-20">
@@ -114,6 +111,6 @@ export default function Navigation() {
           )}
         </AnimatePresence>
       </div>
-    </motion.nav>
+    </nav>
   );
 }
