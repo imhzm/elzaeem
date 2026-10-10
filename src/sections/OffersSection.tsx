@@ -1,10 +1,13 @@
 "use client";
 
+import { motion, useReducedMotion } from "framer-motion";
 import SectionHeader from "@/components/SectionHeader";
 import Button from "@/components/Button";
 import { offers } from "@/data/offers";
 
 export default function OffersSection() {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <section className="py-20 px-4 bg-dark-gray">
       <div className="max-w-7xl mx-auto">
@@ -14,9 +17,17 @@ export default function OffersSection() {
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {offers.map((offer) => (
-            <div
+          {offers.map((offer, index) => (
+            <motion.div
               key={offer.id}
+              initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{
+                duration: 0.5,
+                delay: (index % 4) * 0.1,
+                ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
+              }}
               className="bg-dark-bg rounded-xl overflow-hidden border border-gold/20 hover:border-gold/50 transition-all duration-300 group hover:-translate-y-1 shadow-lg shadow-black/40"
             >
               <div
@@ -40,7 +51,7 @@ export default function OffersSection() {
                   اسأل عن العرض على واتساب
                 </Button>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

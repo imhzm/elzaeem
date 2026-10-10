@@ -1,11 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import SectionHeader from "@/components/SectionHeader";
 import Button from "@/components/Button";
 import { allServices } from "@/data/services";
 import { getWhatsAppLink } from "@/lib/utils";
-import { FaWhatsapp, FaPhone, FaMapMarkerAlt, FaClock } from "react-icons/fa";
+import { FaPhone, FaMapMarkerAlt, FaClock } from "react-icons/fa";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -14,6 +15,7 @@ export default function ContactSection() {
     service: "",
     details: "",
   });
+  const shouldReduceMotion = useReducedMotion();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -31,15 +33,23 @@ export default function ContactSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div>
+          <motion.div
+            initial={shouldReduceMotion ? { opacity: 1, x: 0 } : { opacity: 0, x: 24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{
+              duration: 0.6,
+              ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
+            }}
+          >
             <h3 className="text-2xl font-bold text-gold mb-6">طلب عرض سعر</h3>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-gray-300 mb-2">الاسم</label>
+                <label className="block text-gray-300 mb-2 text-sm font-medium">الاسم</label>
                 <input
                   type="text"
                   required
-                  className="w-full bg-dark-gray border border-gold/30 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold"
+                  className="w-full bg-dark-gray border border-gold/30 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/40 transition-all"
                   value={formData.name}
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
@@ -48,11 +58,11 @@ export default function ContactSection() {
               </div>
 
               <div>
-                <label className="block text-gray-300 mb-2">رقم الهاتف</label>
+                <label className="block text-gray-300 mb-2 text-sm font-medium">رقم الهاتف</label>
                 <input
                   type="tel"
                   required
-                  className="w-full bg-dark-gray border border-gold/30 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold"
+                  className="w-full bg-dark-gray border border-gold/30 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/40 transition-all"
                   value={formData.phone}
                   onChange={(e) =>
                     setFormData({ ...formData, phone: e.target.value })
@@ -61,10 +71,10 @@ export default function ContactSection() {
               </div>
 
               <div>
-                <label className="block text-gray-300 mb-2">نوع الخدمة</label>
+                <label className="block text-gray-300 mb-2 text-sm font-medium">نوع الخدمة</label>
                 <select
                   required
-                  className="w-full bg-dark-gray border border-gold/30 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold"
+                  className="w-full bg-dark-gray border border-gold/30 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/40 transition-all"
                   value={formData.service}
                   onChange={(e) =>
                     setFormData({ ...formData, service: e.target.value })
@@ -81,10 +91,10 @@ export default function ContactSection() {
               </div>
 
               <div>
-                <label className="block text-gray-300 mb-2">تفاصيل الطلب</label>
+                <label className="block text-gray-300 mb-2 text-sm font-medium">تفاصيل الطلب</label>
                 <textarea
                   rows={4}
-                  className="w-full bg-dark-gray border border-gold/30 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold"
+                  className="w-full bg-dark-gray border border-gold/30 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/40 transition-all"
                   value={formData.details}
                   onChange={(e) =>
                     setFormData({ ...formData, details: e.target.value })
@@ -96,27 +106,36 @@ export default function ContactSection() {
                 إرسال على واتساب
               </Button>
             </form>
-          </div>
+          </motion.div>
 
           {/* Contact Info */}
-          <div>
+          <motion.div
+            initial={shouldReduceMotion ? { opacity: 1, x: 0 } : { opacity: 0, x: -24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{
+              duration: 0.6,
+              delay: 0.1,
+              ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
+            }}
+          >
             <h3 className="text-2xl font-bold text-gold mb-6">معلومات التواصل</h3>
             <div className="space-y-6">
-              <div className="flex items-center gap-4">
-                <FaPhone size={24} className="text-gold" />
+              <div className="flex items-center gap-4 p-4 rounded-xl bg-dark-gray/60 border border-gold/20 hover:border-gold/40 transition-colors">
+                <FaPhone size={24} className="text-gold shrink-0" />
                 <div>
                   <p className="text-white font-bold">رقم الهاتف</p>
                   <a
                     href="tel:+201067894321"
-                    className="text-gray-300 hover:text-gold"
+                    className="text-gray-300 hover:text-gold transition-colors"
                   >
                     +201067894321
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <FaMapMarkerAlt size={24} className="text-gold mt-1" />
+              <div className="flex items-start gap-4 p-4 rounded-xl bg-dark-gray/60 border border-gold/20 hover:border-gold/40 transition-colors">
+                <FaMapMarkerAlt size={24} className="text-gold mt-1 shrink-0" />
                 <div>
                   <p className="text-white font-bold">العنوان</p>
                   <p className="text-gray-300">
@@ -125,8 +144,8 @@ export default function ContactSection() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-4">
-                <FaClock size={24} className="text-gold" />
+              <div className="flex items-center gap-4 p-4 rounded-xl bg-dark-gray/60 border border-gold/20 hover:border-gold/40 transition-colors">
+                <FaClock size={24} className="text-gold shrink-0" />
                 <div>
                   <p className="text-white font-bold">مواعيد العمل</p>
                   <p className="text-gray-300">
@@ -160,7 +179,7 @@ export default function ContactSection() {
                 />
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Button from "@/components/Button";
@@ -37,9 +38,9 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2 transition-transform duration-300 hover:scale-[1.03]">
+          <Link href="/" className="flex items-center gap-2 transition-transform duration-300 hover:scale-[1.03]">
             <img src="/logo.png" alt="ELITE SHIELD" className="h-14 w-auto" />
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
