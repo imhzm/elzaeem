@@ -30,14 +30,14 @@ export default function Navigation() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-dark-bg/95 backdrop-blur-md shadow-lg shadow-black/20"
-          : "bg-transparent"
+          ? "bg-dark-bg/95 backdrop-blur-md shadow-lg shadow-black/25 border-b border-gold/15"
+          : "bg-transparent border-b border-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2">
+          <a href="/" className="flex items-center gap-2 transition-transform duration-300 hover:scale-[1.03]">
             <img src="/logo.png" alt="ELITE SHIELD" className="h-14 w-auto" />
           </a>
 
@@ -47,9 +47,10 @@ export default function Navigation() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-gray-300 hover:text-gold transition-colors duration-300"
+                className="relative group py-1 text-sm font-medium text-gray-300 hover:text-gold transition-colors duration-200"
               >
-                {link.label}
+                <span>{link.label}</span>
+                <span className="absolute bottom-0 right-0 left-0 h-[2px] bg-gradient-to-r from-gold/0 via-gold to-gold/0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center rounded-full" />
               </a>
             ))}
           </div>

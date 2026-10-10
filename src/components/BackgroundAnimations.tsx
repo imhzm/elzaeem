@@ -72,11 +72,7 @@ export default function BackgroundAnimations() {
         particlesRef.current.forEach((p) => {
           ctx.beginPath();
           ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-          if (p.hue === 0) {
-            ctx.fillStyle = `rgba(255, 51, 51, ${p.opacity})`;
-          } else {
-            ctx.fillStyle = `rgba(212, 175, 55, ${p.opacity})`;
-          }
+          ctx.fillStyle = `rgba(212, 175, 55, ${p.opacity})`;
           ctx.fill();
 
           p.x += p.speedX;
@@ -104,25 +100,25 @@ export default function BackgroundAnimations() {
       <canvas
         ref={canvasRef}
         className="fixed inset-0 -z-10 pointer-events-none"
-        style={{ opacity: 0.5 }}
+        style={{ opacity: 0.4 }}
       />
 
-      {/* Simplified gradient orbs - only 2 for better performance */}
+      {/* Simplified gradient orbs - subtle luxury gold ambient */}
       <div className="fixed inset-0 -z-10 pointer-events-none overflow-hidden">
         <motion.div
           className="absolute rounded-full"
           style={{
-            width: "500px",
-            height: "500px",
+            width: "550px",
+            height: "550px",
             background:
               "radial-gradient(circle, rgba(212,175,55,0.06) 0%, transparent 70%)",
             left: "-10%",
             top: "-10%",
-            filter: "blur(80px)",
+            filter: "blur(90px)",
           }}
           animate={{
-            x: [0, 60, 0],
-            y: [0, 40, 0],
+            x: [0, 50, 0],
+            y: [0, 35, 0],
           }}
           transition={{
             duration: 25,
@@ -134,20 +130,20 @@ export default function BackgroundAnimations() {
         <motion.div
           className="absolute rounded-full"
           style={{
-            width: "400px",
-            height: "400px",
+            width: "450px",
+            height: "450px",
             background:
-              "radial-gradient(circle, rgba(255,51,51,0.04) 0%, transparent 70%)",
+              "radial-gradient(circle, rgba(212,175,55,0.04) 0%, transparent 70%)",
             right: "-8%",
             bottom: "-8%",
-            filter: "blur(80px)",
+            filter: "blur(90px)",
           }}
           animate={{
-            x: [0, -50, 0],
+            x: [0, -45, 0],
             y: [0, -30, 0],
           }}
           transition={{
-            duration: 20,
+            duration: 22,
             repeat: Infinity,
             ease: "easeInOut",
           }}

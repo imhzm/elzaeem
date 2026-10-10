@@ -1,5 +1,6 @@
 "use client";
 
+import { motion, useReducedMotion } from "framer-motion";
 import SectionHeader from "@/components/SectionHeader";
 import Button from "@/components/Button";
 import { automotiveServices, printingServices, Service } from "@/data/services";
@@ -13,11 +14,24 @@ const iconMap: Record<string, IconType> = {
   ...MdIcons,
 };
 
-function ServiceCard({ service, isFeatured }: { service: Service; isFeatured?: boolean }) {
+function ServiceCard({
+  service,
+  isFeatured,
+  index = 0,
+}: {
+  service: Service;
+  isFeatured?: boolean;
+  index?: number;
+}) {
   const Icon = iconMap[service.icon] || MdIcons.MdHelp;
+  const shouldReduceMotion = useReducedMotion();
 
   return (
-    <div
+    <motion.div
+      initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 22 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.55, delay: (index % 3) * 0.1, ease: [0.16, 1, 0.3, 1] }}
       className={`bg-dark-gray/90 rounded-xl p-6 border transition-all duration-300 group hover:-translate-y-1.5 shadow-xl shadow-black/40 flex flex-col justify-between relative overflow-hidden ${
         isFeatured ? "border-gold/60 ring-1 ring-gold/30" : "border-gold/20 hover:border-gold/50"
       }`}
@@ -58,7 +72,7 @@ function ServiceCard({ service, isFeatured }: { service: Service; isFeatured?: b
           حجز الخدمة عبر واتساب
         </Button>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -87,6 +101,7 @@ export default function ServicesSection() {
               <ServiceCard
                 key={service.id}
                 service={service}
+                index={idx}
                 isFeatured={service.id === "protection-films" || service.id === "car-tint"}
               />
             ))}
@@ -105,8 +120,8 @@ export default function ServicesSection() {
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {printingServices.map((service) => (
-              <ServiceCard key={service.id} service={service} />
+            {printingServices.map((service, idx) => (
+              <ServiceCard key={service.id} service={service} index={idx} />
             ))}
           </div>
         </div>
