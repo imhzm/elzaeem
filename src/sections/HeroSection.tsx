@@ -29,7 +29,7 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-dark-bg py-20 px-4">
       {/* Background with real automotive protection visual & luxury gradient vignette */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <motion.div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url('/images/hero-1.png')` }}

@@ -37,7 +37,7 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="py-20 px-4 bg-dark-gray">
+    <section className="py-20 px-4 bg-dark-gray overflow-hidden">
       <div className="max-w-4xl mx-auto">
         <SectionHeader
           titleAr="أسئلة شائعة"

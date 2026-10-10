@@ -24,7 +24,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact-form" className="py-20 px-4 bg-dark-bg">
+    <section id="contact-form" className="py-20 px-4 bg-dark-bg overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <SectionHeader
           titleAr="تواصل معنا"

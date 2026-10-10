@@ -8,7 +8,7 @@ export default function AboutSection() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section id="about" className="py-20 px-4 bg-dark-bg border-t border-white/5">
+    <section id="about" className="py-20 px-4 bg-dark-bg border-t border-white/5 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Image & Key Pillars Side */}
