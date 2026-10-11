@@ -16,7 +16,7 @@ export const automotiveServices: Service[] = [
     descriptionAr:
       "أفلام حماية أصلية بتقنية المعالجة الذاتية لحماية البوية من الخدوش والترميل والشمس وعوامل الجو.",
     icon: "MdShield",
-    image: "/images/hero-4.jpg",
+    image: "/images/es_hero_ppf_installation.jpg",
     category: "automotive",
   },
   {
