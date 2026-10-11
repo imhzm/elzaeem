@@ -5,13 +5,38 @@ import SectionHeader from "@/components/SectionHeader";
 import Button from "@/components/Button";
 import { automotiveServices, printingServices, Service } from "@/data/services";
 import { IconType } from "react-icons/lib";
-import * as FaIcons from "react-icons/fa";
-import * as MdIcons from "react-icons/md";
+import {
+  MdShield,
+  MdOpacity,
+  MdScreenShare,
+  MdLightbulb,
+  MdAirlineSeatReclineNormal,
+  MdSpeaker,
+  MdBusiness,
+  MdBlurOn,
+  MdLabel,
+  MdPhotoSizeSelectLarge,
+  MdSignpost,
+  MdPrint,
+  MdHelp,
+  MdDirectionsCar,
+} from "react-icons/md";
 
 // Map icon strings to actual icon components
 const iconMap: Record<string, IconType> = {
-  ...FaIcons,
-  ...MdIcons,
+  MdShield,
+  MdOpacity,
+  MdScreenShare,
+  MdLightbulb,
+  MdAirlineSeatReclineNormal,
+  MdSpeaker,
+  MdBusiness,
+  MdBlurOn,
+  MdLabel,
+  MdPhotoSizeSelectLarge,
+  MdSignpost,
+  MdPrint,
+  MdHelp,
 };
 
 function ServiceCard({
@@ -23,7 +48,7 @@ function ServiceCard({
   isFeatured?: boolean;
   index?: number;
 }) {
-  const Icon = iconMap[service.icon] || MdIcons.MdHelp;
+  const Icon = iconMap[service.icon] || MdHelp;
   const shouldReduceMotion = useReducedMotion();
 
   return (
@@ -89,7 +114,7 @@ export default function ServicesSection() {
         <div className="mb-20">
           <div className="flex items-center gap-3 mb-8 pb-3 border-b border-gold/20">
             <div className="p-2 rounded-lg bg-gold/15 text-gold">
-              <MdIcons.MdDirectionsCar size={30} />
+              <MdDirectionsCar size={30} />
             </div>
             <div>
               <h3 className="text-2xl font-extrabold text-white">خدمات كماليات وحماية السيارات</h3>
@@ -112,7 +137,7 @@ export default function ServicesSection() {
         <div>
           <div className="flex items-center gap-3 mb-8 pb-3 border-b border-gold/20">
             <div className="p-2 rounded-lg bg-gold/15 text-gold">
-              <MdIcons.MdPrint size={30} />
+              <MdPrint size={30} />
             </div>
             <div>
               <h3 className="text-2xl font-extrabold text-white">الطباعة والدعاية والإعلان والتجهيزات</h3>

@@ -4,22 +4,22 @@ import { motion, useReducedMotion, type Variants } from "framer-motion";
 import Button from "@/components/Button";
 
 const containerVariants: Variants = {
-  hidden: { opacity: 0 },
+  hidden: { opacity: 0.95 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.12,
-      delayChildren: 0.08,
+      staggerChildren: 0.1,
+      delayChildren: 0.05,
     },
   },
 };
 
 const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 18 },
+  hidden: { opacity: 0.95, y: 10 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.65, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
+    transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
   },
 };
 
@@ -46,7 +46,7 @@ export default function HeroSection() {
       <motion.div
         className="relative z-10 text-center px-4 max-w-4xl mx-auto flex flex-col items-center"
         variants={containerVariants}
-        initial="hidden"
+        initial={false}
         animate="visible"
       >
         {/* Top Trust Badge */}

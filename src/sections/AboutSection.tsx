@@ -13,7 +13,7 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Image & Key Pillars Side */}
           <motion.div
-            initial={shouldReduceMotion ? { opacity: 1, x: 0 } : { opacity: 0, x: 24 }}
+            initial={shouldReduceMotion ? { opacity: 1, x: 0 } : { opacity: 0.9, x: 12 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
@@ -61,7 +61,7 @@ export default function AboutSection() {
 
           {/* Text Side */}
           <motion.div
-            initial={shouldReduceMotion ? { opacity: 1, x: 0 } : { opacity: 0, x: -24 }}
+            initial={shouldReduceMotion ? { opacity: 1, x: 0 } : { opacity: 0.9, x: -12 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
