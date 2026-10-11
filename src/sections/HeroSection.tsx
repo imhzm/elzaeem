@@ -106,15 +106,15 @@ export default function HeroSection() {
           </div>
           <div className="flex items-center justify-center gap-2 py-2 px-3 rounded-lg bg-white/[0.04] border border-white/5 transition-all duration-300 hover:border-gold/30 hover:bg-white/[0.08]">
             <span className="text-gold font-bold text-base">💎</span>
-            <span className="font-medium">نانو سيراميك 9H فائق</span>
+            <span className="font-medium">نانو سيراميك فائق اللمعان</span>
           </div>
           <div className="flex items-center justify-center gap-2 py-2 px-3 rounded-lg bg-white/[0.04] border border-white/5 transition-all duration-300 hover:border-gold/30 hover:bg-white/[0.08]">
             <span className="text-gold font-bold text-base">☀️</span>
-            <span className="font-medium">عزل حراري 99% UV</span>
+            <span className="font-medium">عزل حراري نانو متطور</span>
           </div>
           <div className="flex items-center justify-center gap-2 py-2 px-3 rounded-lg bg-white/[0.04] border border-white/5 transition-all duration-300 hover:border-gold/30 hover:bg-white/[0.08]">
             <span className="text-gold font-bold text-base">📜</span>
-            <span className="font-medium">ضمان حقيقي معتمد</span>
+            <span className="font-medium">ضمان عملي ووثيقة متابعة</span>
           </div>
         </motion.div>
       </motion.div>

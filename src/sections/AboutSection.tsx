@@ -34,7 +34,7 @@ export default function AboutSection() {
                   <FaShieldAlt size={22} />
                 </div>
                 <div>
-                  <p className="text-white font-bold text-sm sm:text-base">مركز معتمد لحماية السيارات</p>
+                  <p className="text-white font-bold text-sm sm:text-base">مركز متخصص لتجهيز وحماية السيارات</p>
                   <p className="text-gray-300 text-xs sm:text-sm">أحدث تقنيات الـ PPF والنانو سيراميك والتجهيزات الفاخرة</p>
                 </div>
               </div>
@@ -52,7 +52,7 @@ export default function AboutSection() {
               <div className="bg-dark-gray/90 p-4 rounded-xl border border-gold/25 flex items-center gap-3 transition-colors hover:border-gold/50">
                 <FaAward className="text-gold text-xl shrink-0" />
                 <div>
-                  <p className="text-white font-bold text-sm">ضمان معتمد</p>
+                  <p className="text-white font-bold text-sm">ضمان مكتوب</p>
                   <p className="text-gray-400 text-xs">حماية ممتدة ومتابعة دورية</p>
                 </div>
               </div>
@@ -79,8 +79,8 @@ export default function AboutSection() {
             <div className="space-y-3.5 mb-8">
               {[
                 "أفلام حماية طلاء PPF معالجة ذاتياً ومقاومة لأقسى عوامل الطريق",
-                "عزل حراري نانو كربوني وسيراميك يحجب 99% من الأشعة فوق البنفسجية",
-                "طبقات نانو سيراميك 9H فائقة اللمعان والصلابة لحماية الهيكل والجنوط",
+                "عزل حراري نانو كربوني وسيراميك متطور لحجب الأشعة فوق البنفسجية",
+                "طبقات نانو سيراميك فائقة الكثافة واللمعان لحماية الطلاء والجنوط",
                 "تجهيزات مقصورة وفرش داخلي وأنظمة شاشات وليدات متطورة",
                 "فريق فني متخصص وبيئة عمل معقمة ومجهزة بأحدث أدوات الفحص والتثبيت",
               ].map((item, index) => (

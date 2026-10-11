@@ -24,7 +24,7 @@ export const automotiveServices: Service[] = [
     titleAr: "عزل حراري وفاميه متطور",
     titleEn: "Thermal Insulation & Tint",
     descriptionAr:
-      "أفلام نانو كربوني وسيراميك تعزل 99% من الأشعة فوق البنفسجية وتوفر خصوصية وتبريد فائق للمقصورة.",
+      "أفلام نانو كربوني وسيراميك متطورة لعزل الأشعة فوق البنفسجية وتوفير راحة حرارية وخصوصية عالية للمقصورة.",
     icon: "MdOpacity",
     image: "/images/hero-1.jpg",
     category: "automotive",
