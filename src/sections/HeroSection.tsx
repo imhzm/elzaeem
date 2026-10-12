@@ -61,10 +61,10 @@ export default function HeroSection() {
         {/* Main Automotive Headline */}
         <motion.h1
           variants={itemVariants}
-          className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight tracking-tight"
+          className="text-2xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-[1.3] sm:leading-tight tracking-tight"
         >
           حماية متطورة ومظهر استثنائي لسيارتك مع{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold via-yellow-200 to-amber-500">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold via-yellow-200 to-amber-500 font-extrabold">
             إيليت شيلد
           </span>
         </motion.h1>
@@ -72,7 +72,7 @@ export default function HeroSection() {
         {/* Clear Service Proposition */}
         <motion.p
           variants={itemVariants}
-          className="text-base sm:text-lg lg:text-xl text-gray-200 mb-8 max-w-2xl mx-auto leading-relaxed font-normal"
+          className="text-sm sm:text-base lg:text-lg text-gray-200 mb-8 max-w-2xl mx-auto leading-relaxed font-normal"
         >
           أفلام حماية الطلاء PPF بتقنية المعالجة الذاتية، طلاء النانو سيراميك عالي الكثافة، العزل الحراري المتقدم، وتجهيزات كماليات ومقصورة السيارات بأعلى معايير الإتقان.
         </motion.p>

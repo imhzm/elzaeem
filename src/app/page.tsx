@@ -10,9 +10,8 @@ import FAQSection from "@/sections/FAQSection";
 import OffersSection from "@/sections/OffersSection";
 import ContactSection from "@/sections/ContactSection";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import FloatingActions from "@/components/FloatingActions";
 import ScrollToTop from "@/components/ScrollToTop";
-import CallNowButton from "@/components/CallNowButton";
 export default function Home() {
   return (
     <main className="flex-1 min-h-screen bg-dark-bg text-white">
@@ -38,9 +37,8 @@ export default function Home() {
           <ContactSection />
         </div>
         <Footer />
-        <WhatsAppButton />
+        <FloatingActions />
         <ScrollToTop />
-        <CallNowButton />
     </main>
   );
 }
