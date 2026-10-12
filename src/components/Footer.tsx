@@ -3,7 +3,7 @@ import { getWhatsAppLink } from "@/lib/utils";
 
 export default function Footer() {
   return (
-    <footer className="bg-dark-gray border-t border-gold/20 py-12 px-4">
+    <footer className="bg-dark-gray border-t border-gold/20 pt-12 pb-24 sm:pb-12 px-4">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Brand */}
         <div>
